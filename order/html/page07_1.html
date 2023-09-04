@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/global.css" />
+	<script src="../assets/script/jquery-1.8.2.min.js"></script>
+	<script src="../assets/script/jquery-ui.min.1.8.js"></script>
+	<script src="../assets/script/jquery.ui.touch-punch.min.js"></script>
+	<script src="../assets/script/idangerous.swiper.js"></script>
+	<script src="../assets/script/jquery.popupoverlay.js"></script>
+	<script src="../assets/script/common.js"></script>
+	<script src="../assets/script/jquery.nice-select.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader scroll">
+			<div class="header">
+				<a href="#" class="btnHback txtHide">이전</a>
+				<h1>리뷰쓰기</h1>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents">
+				<div class="subBasicCont">
+					<div class="reviewReport">
+						<div class="orderRider">
+							<div class="selectBox01">
+								<select name="selectBox">
+									<option value="" selected="selected">직접입력</option>
+									<option value="">정말맛있어요, 추천합니다.</option>
+									<option value="">평범하네요.</option>
+									<option value="">조금 아쉬웠어요.</option>
+								</select>
+							</div>
+							<div class="txtBox01">
+								<textarea placeholder="내용을 입력해주세요."></textarea>
+								<div class="inputFocus"></div>
+							</div>
+							<div class="imgFile">
+								<div>
+									<ul>
+										<li class="add">
+											<input type="file" />
+											<span class="pc"><em>0/5</em></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<label class="chkBox3">
+								<input type="checkbox" name="" value="" />
+								<span class="icon"></span>
+								<span class="text">비밀글로 작성하기</span>
+							</label>
+						</div>
+						<div class="btnFixd">
+							<a href="#" class="btnTy4">등록</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+
+		<script type="text/javascript">
+			//셀렉트 border 활성, 비활성
+			$('select[name=selectBox]').on('click', function(e) {
+				$(this).parent().addClass('on');
+			});
+			$('select[name=selectBox]').on('blur', function(e) {
+				$(this).parent().removeClass('on');
+			});
+
+			//첨부이미지 스와이프
+			var _addSwipe = new Swiper('.imgFile .swiper-container', {
+				slidesPerView: 'auto',
+			});
+		</script>
+	</div>
+</body>
+</html>

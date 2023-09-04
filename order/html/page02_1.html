@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/global.css" />
+	<script src="../assets/script/jquery-1.8.2.min.js"></script>
+	<script src="../assets/script/jquery-ui.min.1.8.js"></script>
+	<script src="../assets/script/jquery.ui.touch-punch.min.js"></script>
+	<script src="../assets/script/idangerous.swiper.js"></script>
+	<script src="../assets/script/jquery.popupoverlay.js"></script>
+	<script src="../assets/script/common.js"></script>
+	<script src="../assets/script/jquery.nice-select.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader">
+			<div class="header">
+				<a href="./main00_2.html" class="btnHback txtHide">이전</a>
+				<h1>상품상세</h1>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents">
+				<!-- 비주얼 -->
+				<div class="visualSwipe subVisualSwipe">
+					<div class="swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide layerMenuPhoto_open">
+                                <!-- 22.07.05 이현진 수정 -->
+                                <!-- <img src="../assets/images/sub/product_visual.jpg" alt="상품 사진" /> -->
+                                <!-- // 22.07.05 이현진 수정 -->
+                            </li>
+							<li class="swiper-slide layerMenuPhoto_open"><img src="../assets/images/sub/product_visual.jpg" alt="상품 사진" /></li>
+						</ul>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<!--// 비주얼 -->
+
+				<!-- 상품 상세 상단 -->
+				<div class="productTop">
+					<div class="storeLink">
+						<span>순이네 반찬</span>
+						<a href="./page04_1.html">스토어 바로가기</a>
+					</div>
+					<div class="productTit">
+						<h3 class="wordType02">정말 맛있는 고등어 오븐구이 2인분 (1마리)</h3> <!-- 22.11.03 이현진 class wordType02 추가 -->
+
+						<!-- 22.07.05 이현진 수정 -->
+                        <em>6,300원 <span>* 최대구매수량 : 10개</span></em>
+                        <!-- // 22.07.05 이현진 수정 -->
+
+						<div class="countWrap">
+							<div class="productCount">
+								<a href="#" class="btnMinus txtHide">감소</a>
+								<input type="text" name="" value="1" readonly="readonly" />
+								<a href="#" class="btnPlus txtHide">증가</a>
+							</div>
+                            <!-- 22.07.01 이현진 수정 -->
+                            <a href="javascript:void(0)" class="addBtn txtHide" onclick="toast('장바구니에 담았습니다.')">장바구니</a>
+                            <div id="toast"></div>
+                            <!-- // 22.07.01 이현진 수정 -->
+						</div>
+					</div>
+					<ul class="subShare">
+						<li><a href="javascript:void(0)"><em>찜 <span>31</span></em></a></li>
+						<li><a href="javascript:void(0)"><em>공유</em></a></li>
+					</ul>
+				</div>
+				<hr class="hrBk" />
+				<!-- // 상품 상세 상단-->
+
+				<!-- 상품정보, 리뷰 -->
+                <div class="protuctTabWrap">
+                    <div class="protuctTabTop">
+                        <ul>
+                            <li class="on"><a href="javascript:void(0)">정보</a></li>
+                            <!-- <li><a href="javascript:void(0)">리뷰</a></li> --> <!-- 22.06.30 이현진 미노출 -->
+                        </ul>
+                    </div>
+                    <div class="protuctTabCon">
+                        <div class="protuctTab protuctTab01">
+                            <div class="productIntro wordType02"> <!-- 22.11.03 이현진 class wordType02 추가 -->
+                                <!-- 22.07.01 이현진 수정 -->
+                                <h4>순이네 판매 1위 상품!! 태평양에서 온 등푸른 고등어 깊은 맛과 한국인의 대표적인 영양식!</h4>
+                                <!-- // 22.07.01 이현진 수정 -->
+                                <p>
+                                    안녕하세요, 저희는 울산종합전통시장에서 반찬, 김치, 샐러드 뿐만 아니라 족발도 직접 삶아 판매하고 있습니다.
+                                    혜리네 반찬은 상품을 재판매 하지 않고 있으며,  족발의 경우 주문시 바로 손질하여 판매합니다.
+                                    저희 혜리네 반찬을 많이 이용해주세요!
+                                    감사합니다.
+                                </p>
+                            </div>
+                            <h5>상품고시정보</h5>
+                            <div class="productTable">
+                                <table>
+                                    <colgroup>
+                                        <col width="50%" />
+                                        <col width="50%" />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1. 품목(또는 명칭) </th>
+                                            <td>예시) 상추</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2. 포장단위별 내용물의 용량(중량), 수량, 크기</th>
+                                            <td>400g</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3. 생산자, 수입품의경우 수입자를 함께 표기</th>
+                                            <td>충남농산</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4. 농수산물의 원산지 표시에 관한 법률에 따른 원산지</th>
+                                            <td>국내산</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5. 제조연월일(포장일 또는 생산연도).유통기한</th>
+                                            <td>제조일 2022.03.07</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">6. 관련법상 표시사항</th>
+                                            <td>농산물</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">6-1. 농산물농수산물품질관리법상 유전자변형농산물 표시, 지리적표시</th>
+                                            <td>해당사항없음</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">6-2. 축산물축산법에 따른 등급표시, 축산물이력법에 따른 이력관리대상축산물 유무</th>
+                                            <td>해당사항에만 데이터 입력 <br/>(미해당시 미노출)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">6-3. 수산물농수산물품질관리법상 유전자변형수선물 표시, 지리적표시</th>
+                                            <td>해당사항에만 데이터 입력 <br/>(미해당시 미노출)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">6-4. 수입식품에 해당하는 경우“수입식품안전관리특별법에 따른 수입신고를 필함” 문구</th>
+                                            <td>해당사항에만 데이터 입력 <br/>(미해당시 미노출)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">7. 상품구성</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">8. 보관방법 또는취급방법</th>
+                                            <td>냉장보관</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">9. 식품등의 표시광고에 관한 법률에 따른 소비자안전을 위한 주의사항</th>
+                                            <td>해당사항 없음</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">10. 소비자상담 관련 전화번호</th>
+                                            <td>1577-0000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="javascript:void(0)"><span>상세정보 펼쳐보기</span></a>
+                            
+                            <!-- 22.08.05 이상아 추가 -->
+                            <div class="changeRefund">
+                                <dl>
+                                    <dt>교환 및 환불 안내</dt>
+                                    <dd>
+                                        재판매가 불가한 상품의 특성상 , 단순변심 , 주문 착오 시 교환 및<br />반품이 어려운점 양해부탁드립니다.<br />
+                                        구매 확정이후로 환불을 원한다면 상품 받은날로부터<br />7일 이내에 콜센터로 문의 해주세요.
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!--// 22.08.05 이상아 추가 -->
+                        </div>
+                        <div class="protuctTab">
+                            <div class="reviewList">
+                                <h4 class="titH4">리뷰<strong>92</strong></h4>
+                                <div class="sortDiv">
+                                    <label class="chkBox2">
+                                        <input type="checkbox" name="" value="" />
+                                        <span class="icon"></span>
+                                        <span class="text">사진 리뷰만</span>
+                                    </label>
+                                    <div class="sort">
+                                        <a href="#" class="on">최신순</a>
+                                        <a href="#">인기순</a>
+                                    </div>
+                                </div>
+                                <div class="reviewAll">
+                                    <ul>
+                                        <li>
+                                            <dl>
+                                                <dt>koreacen***</dt>
+                                                <dd>2022년 02월 08일</dd>
+                                            </dl>
+                                            <div class="notifyBox">
+                                                <a href="javascript:void(0)" class="txtHide">버튼</a>
+                                                <ul>
+                                                    <li><a href="#"><span>신고하기</span></a></li>
+                                                    <li><a href="#"><span>차단하기</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <em class="odMenu">정말 맛있는 고등어 오븐구이 2인분 (1마리)</em>
+                                            <div class="photo">
+                                                <ul>
+                                                    <li><a href="#" class="layerReviewPhoto_open"><img src="../assets/images/sub/review_img.png" alt="리뷰메뉴 이미지" /></a></li>
+                                                </ul>
+                                            </div>
+                                            <p>가격대비 좋은 생선을 보내 주셨어요. 신선도도좋고 손질도 잘 되어 있어 편리했어요. 다만 두 마리를 사고 싶었는데 한 마리씩 파네요.. 신선하고 맛있었어요.</p>
+                                            <div class="ownerReply">
+                                                <dl>
+                                                    <dt>사장님</dt>
+                                                    <dd>2022년 04월 06일</dd>
+                                                </dl>
+                                                <p>
+                                                    koreacen***님 안녕하세요^^*<br />
+                                                    맛있게 드셔주시고, 최고리뷰 감사합니다.<br />
+                                                    더 좋은맛과 서비스를 위해 노력하겠습니다.<br />
+                                                    자주 애용해 주세요^^
+                                                </p>
+                                            </div>
+                                            <div class="likeDiv">
+                                                <span>리뷰가 도움이 됐나요?</span>
+                                                <button class="on">12</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>koreacen***</dt>
+                                                <dd>2022년 02월 08일</dd>
+                                            </dl>
+                                            <div class="notifyBox">
+                                                <a href="javascript:void(0)" class="txtHide">버튼</a>
+                                                <ul>
+                                                    <li><a href="#"><span>신고하기</span></a></li>
+                                                    <li><a href="#"><span>차단하기</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <em class="odMenu">정말 맛있는 고등어 오븐구이 2인분 (1마리)</em>
+                                            <div class="photo">
+                                                <ul>
+                                                    <li><a href="#" class="layerReviewPhoto_open"><img src="../assets/images/sub/review_img.png" alt="리뷰메뉴 이미지" /></a></li>
+                                                    <li><a href="#" class="layerReviewPhoto_open"><img src="../assets/images/sub/review_img.png" alt="리뷰메뉴 이미지" /></a></li>
+                                                </ul>
+                                            </div>
+                                            <p>가격대비 좋은 생선을 보내 주셨어요. 신선도도좋고 손질도 잘 되어 있어 편리했어요. 다만 두 마리를 사고 싶었는데 한 마리씩 파네요.. 신선하고 맛있었어요.</p>
+                                            <div class="ownerReply">
+                                                <dl>
+                                                    <dt>사장님</dt>
+                                                    <dd>2022년 04월 06일</dd>
+                                                </dl>
+                                                <p>
+                                                    koreacen***님 안녕하세요^^*<br />
+                                                    맛있게 드셔주시고, 최고리뷰 감사합니다.<br />
+                                                    더 좋은맛과 서비스를 위해 노력하겠습니다.<br />
+                                                    자주 애용해 주세요^^
+                                                </p>
+                                            </div>
+                                            <div class="likeDiv">
+                                                <span>리뷰가 도움이 됐나요?</span>
+                                                <button>12</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>koreacen***</dt>
+                                                <dd>2022년 02월 08일</dd>
+                                            </dl>
+                                            <div class="notifyBox">
+                                                <a href="javascript:void(0)" class="txtHide">버튼</a>
+                                                <ul>
+                                                    <li><a href="#"><span>신고하기</span></a></li>
+                                                    <li><a href="#"><span>차단하기</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <em class="odMenu">정말 맛있는 고등어 오븐구이 2인분 (1마리)</em>
+                                            <div class="photo">
+                                                <ul>
+                                                    <li><a href="#" class="layerReviewPhoto_open"><img src="../assets/images/sub/review_img.png" alt="리뷰메뉴 이미지" /></a></li>
+                                                    <li><a href="#" class="layerReviewPhoto_open"><img src="../assets/images/sub/review_img.png" alt="리뷰메뉴 이미지" /></a></li>
+                                                    <li><a href="#" class="layerReviewPhoto_open"><img src="../assets/images/sub/review_img.png" alt="리뷰메뉴 이미지" /></a></li>
+                                                </ul>
+                                            </div>
+                                            <p>가격대비 좋은 생선을 보내 주셨어요. 신선도도좋고 손질도 잘 되어 있어 편리했어요. 다만 두 마리를 사고 싶었는데 한 마리씩 파네요.. 신선하고 맛있었어요.</p>
+                                            <div class="ownerReply">
+                                                <dl>
+                                                    <dt>사장님</dt>
+                                                    <dd>2022년 04월 06일</dd>
+                                                </dl>
+                                                <p>
+                                                    koreacen***님 안녕하세요^^*<br />
+                                                    맛있게 드셔주시고, 최고리뷰 감사합니다.<br />
+                                                    더 좋은맛과 서비스를 위해 노력하겠습니다.<br />
+                                                    자주 애용해 주세요^^
+                                                </p>
+                                            </div>
+                                            <div class="likeDiv">
+                                                <span>리뷰가 도움이 됐나요?</span>
+                                                <button>12</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>koreacen***</dt>
+                                                <dd>2022년 02월 08일</dd>
+                                            </dl>
+                                            <div class="notifyBox">
+                                                <a href="javascript:void(0)" class="txtHide">버튼</a>
+                                                <ul>
+                                                    <li><a href="#"><span>신고하기</span></a></li>
+                                                    <li><a href="#"><span>차단하기</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <em class="odMenu">정말 맛있는 고등어 오븐구이 2인분 (1마리)</em>
+                                            <div class="photo">
+                                                <ul>
+                                                    <li><a href="#" class="layerReviewPhoto_open"><img src="../assets/images/sub/review_img.png" alt="리뷰메뉴 이미지" /></a></li>
+                                                    <li><a href="#" class="layerReviewPhoto_open"><img src="../assets/images/sub/review_img.png" alt="리뷰메뉴 이미지" /></a></li>
+                                                    <li class="morePhoto"><a href="#" class="layerReviewPhoto_open"><img src="../assets/images/sub/review_img.png" alt="리뷰메뉴 이미지" /></a></li>
+                                                </ul>
+                                            </div>
+                                            <p>가격대비 좋은 생선을 보내 주셨어요. 신선도도좋고 손질도 잘 되어 있어 편리했어요. 다만 두 마리를 사고 싶었는데 한 마리씩 파네요.. 신선하고 맛있었어요.</p>
+                                            <div class="ownerReply">
+                                                <dl>
+                                                    <dt>사장님</dt>
+                                                    <dd>2022년 04월 06일</dd>
+                                                </dl>
+                                                <p>
+                                                    koreacen***님 안녕하세요^^*<br />
+                                                    맛있게 드셔주시고, 최고리뷰 감사합니다.<br />
+                                                    더 좋은맛과 서비스를 위해 노력하겠습니다.<br />
+                                                    자주 애용해 주세요^^
+                                                </p>
+                                            </div>
+                                            <div class="likeDiv">
+                                                <span>리뷰가 도움이 됐나요?</span>
+                                                <button>12</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>koreacen***</dt>
+                                                <dd>2022년 02월 08일</dd>
+                                            </dl>
+                                            <em class="odMenu">정말 맛있는 고등어 오븐구이 2인분 (1마리)</em>
+                                            <p>진짜 진짜 맛있어요 ~<br />재구매 의사 있습니다 :)</p>
+                                            <div class="ownerReply">
+                                                <dl>
+                                                    <dt>사장님</dt>
+                                                    <dd>2022년 04월 06일</dd>
+                                                </dl>
+                                                <p>
+                                                    koreacen***님 안녕하세요^^*<br />
+                                                    맛있게 드셔주시고, 최고리뷰 감사합니다.<br />
+                                                    더 좋은맛과 서비스를 위해 노력하겠습니다.<br />
+                                                    자주 애용해 주세요^^
+                                                </p>
+                                            </div>
+                                            <div class="likeDiv">
+                                                <span>리뷰가 도움이 됐나요?</span>
+                                                <button>12</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>koreacen***</dt>
+                                                <dd>2022년 02월 08일</dd>
+                                            </dl>
+                                            <div class="notifyBox">
+                                                <a href="javascript:void(0)" class="txtHide">버튼</a>
+                                                <ul>
+                                                    <li><a href="#"><span>신고하기</span></a></li>
+                                                    <li><a href="#"><span>차단하기</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <em class="odMenu">정말 맛있는 고등어 오븐구이 2인분 (1마리)</em>
+                                            <p>진짜 진짜 맛있어요 ~<br />재구매 의사 있습니다 :)</p>
+                                            <div class="likeDiv">
+                                                <span>리뷰가 도움이 됐나요?</span>
+                                                <button>12</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>koreacen***</dt>
+                                                <dd>2022년 02월 08일</dd>
+                                            </dl>
+                                            <div class="notifyBox">
+                                                <a href="javascript:void(0)" class="txtHide">버튼</a>
+                                                <ul>
+                                                    <li><a href="#"><span>신고하기</span></a></li>
+                                                    <li><a href="#"><span>차단하기</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <em class="odMenu">정말 맛있는 고등어 오븐구이 2인분 (1마리)</em>
+                                            <p class="secret">비밀글입니다.</p>
+                                            <div class="ownerReply">
+                                                <dl>
+                                                    <dt>사장님</dt>
+                                                    <dd>2022년 04월 06일</dd>
+                                                </dl>
+                                                <p class="secret">비밀댓글입니다.</p>
+                                            </div>
+                                            <div class="likeDiv">
+                                                <span>리뷰가 도움이 됐나요?</span>
+                                                <button>0</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<!-- // 상품정보, 리뷰 -->
+
+				<!-- 합계, 장바구니 -->
+				<div class="totalBasketDiv">
+					<a href="./page05_1.html" class="btnTy1">
+						<span>1개 주문</span>
+						<em>18,900원</em>
+					</a>
+				</div>
+				<!--// 합계, 장바구니 -->
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+
+		<!-- 푸터 -->
+        <!-- 22.07.04 이현진 수정 -->
+            <!-- <div id="footer">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                </ul>
+                <p>
+                    울산시장앱 by
+                    <img src="../assets/images/sub/foot_logo.png" alt="스탬프팡" />
+                </p>
+            </div> -->
+
+        <div id="footer">
+			<div class="footer">
+				<a href="#" class="btnCmpInfo">사업자 정보 확인</a>
+				<div class="offDiv">
+					<p class="cmpDesc">
+						㈜코리아센터는 통신판매중개자이며 통신판매의 당사자가<br />
+						아닙니다. 따라서 (주)코리아센터는 상품거래정보 및<br />
+						거래에 대한 책임을 지지 않습니다.
+					</p>
+					<a href="tel:1234-5678" class="btnTel">울산시장앱 고객센터  :  1234-5678</a>
+                    <p>
+                        울산시장앱 by
+                        <img src="../assets/images/sub/foot_logo.png" alt="스탬프팡" />
+                    </p>
+				</div>
+				<div class="onDiv">
+					<ul>
+						<li>㈜코리아센터</li>
+						<li>대표자명 : 김기록</li>
+						<li>사업자 번호 : 206-81-21131</li>
+                        <!-- 22.07.01 이현진 추가 -->
+                        <li>통신판매업신고 번호: 제 <strong>2005-00874</strong>호</li>
+                        <!-- 22.07.01 이현진 추가 -->
+						<li>주소 : 서울 금천구 가산통 371-28 우림라이온스 벨리 A 동 14층</li>
+					</ul>
+					<div class="guideTerm">
+						<a href="https://stampang.com/gonggong/terms_use_user" target="_blank" rel="noopener noreferrer">이용약관</a>
+						<a href="https://stampang.com/gonggong/terms_info_user" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+						<a href="https://stampang.com/gonggong/terms_location" target="_blank" rel="noopener noreferrer">위치기반 서비스 이용약관</a>
+					</div>
+					<p class="cmpDesc">
+						㈜코리아센터는 통신판매중개자이며 통신판매의 당사자가 아닙니다.<br>
+						따라서 코리아 센터는 상품거래정보 및 거래에 대한 책임을 지지 않습니다.
+					</p>
+					<a href="tel:1899-4242" class="btnTel">울산시장앱 고객센터 : 1899-4242</a>
+                    <p>
+                        울산시장앱 by
+                        <img src="../assets/images/sub/foot_logo.png" alt="스탬프팡" />
+                    </p>
+				</div>
+			</div>
+		</div>
+        <!-- // 22.07.04 이현진 수정 -->
+		<!--// 푸터 -->
+	</div>
+
+	<!-- 메뉴 상세 이미지 레이어 -->
+	<div id="layerMenuPhoto" class="layerMenuPhoto">
+		<div class="bgModal100"></div>
+		<div class="menuPhotoBox">
+			<div class="photo">
+				<div class="swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+                            <!-- 22.07.05 이현진 수정 -->
+                            <!-- <img src="../assets/images/sub/product_visual.jpg" alt="상품사진" /> -->
+                            <!-- // 22.07.05 이현진 수정 -->
+                        </li>
+						<li class="swiper-slide"><img src="../assets/images/sub/product_visual.jpg" alt="상품사진" /></li>
+					</ul>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<a href="#" class="btnLyClose1 txtHide layerMenuPhoto_close">닫기</a>
+	</div>
+	<!--// 메뉴 상세 이미지 레이어 -->
+
+	<!-- 리뷰 상세 이미지 레이어 -->
+	<div id="layerReviewPhoto" class="layerMenuPhoto">
+		<div class="bgModal100"></div>
+		<div class="menuPhotoBox">
+			<div class="photo">
+				<div class="swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><img src="../assets/images/sub/review_img.png" alt="리뷰상세 이미지" /></li>
+						<li class="swiper-slide"><img src="../assets/images/sub/review_img.png" alt="리뷰상세 이미지" /></li>
+					</ul>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<a href="#" class="btnLyClose1 txtHide layerReviewPhoto_close">닫기</a>
+	</div>
+	<!--// 리뷰 상세 이미지 레이어 -->
+	<script>
+		//header
+		$(window).scroll(function(){
+			chgScrollClass();
+		});
+		
+		var header = $('#header');
+		var headerH1 = $('#header').find('h1');
+		var productTit = $('.productTit').find('h3').html();
+		function chgScrollClass() {
+			if($(window).scrollTop() <= $('.productTop').offset().top) {
+				header.removeClass('scroll');
+
+				if(header.hasClass('scroll') == false){
+					headerH1.html('상품상세');
+				};
+			} else {
+				header.addClass('scroll');
+
+				if(header.hasClass('scroll') == true){
+					headerH1.html(productTit);
+				};
+			}
+		}
+		chgScrollClass();
+
+		// 비주얼 스와이프
+		var _visualSwipe = new Swiper('.visualSwipe .swiper-container', {
+			pagination: {
+				el: ".visualSwipe .swiper-pagination",
+				type: "bullets",
+			}
+		});
+		
+
+		// 찜버튼
+		$('.subShare li:first-child').find('a').on('click', function(){
+			$(this).find('em').toggleClass('on');
+		});
+
+		// 상품,정보 탭
+		var cnt = 0;
+		$('.protuctTabCon .protuctTab').hide().eq(0).show();
+		$('.protuctTabTop li').click(function() {
+			cnt = $(this).index()
+			$('.protuctTabTop li').removeClass('on').eq(cnt).addClass('on');
+			$('.protuctTabCon .protuctTab').hide().eq(cnt).fadeIn();
+		});
+
+		// 상세정보 펼쳐보기 버튼
+		var productDetailBtn = $('.protuctTab01 > a');
+		productDetailBtn.on('click', function(){
+			$(this).toggleClass('on');
+				
+			if(productDetailBtn.hasClass('on') == true) {
+				$(this).html('<span>상세정보 접어보기</span>');
+				$('.productTable').css('height','auto');
+			} else {
+				$(this).html('<span>상세정보 펼쳐보기</span>');
+				$('.productTable').css('height','437px');
+			};
+		});
+
+		// (리뷰)신고,차단 팝업
+		$('.reviewList .reviewAll .notifyBox > a').on('click', function(){
+			$(this).siblings('ul').fadeToggle();
+		});
+
+		//메뉴 상세 레이어
+		var _photoSwipe;
+		commonPop('#layerMenuPhoto', {
+			opacity: 100,
+			autozindex: true,
+			onopen: function() {
+				if(!_photoSwipe) {
+					_photoSwipe = new Swiper('#layerMenuPhoto .swiper-container', {
+						pagination: {
+							el: "#layerMenuPhoto .swiper-pagination",
+							type: "fraction",
+						},
+					});
+				}
+			}
+		});
+
+		//리뷰 상세 레이어
+		var _reviewphotoSwipe;
+		commonPop('#layerReviewPhoto', {
+			opacity: 100,
+			autozindex: true,
+			onopen: function() {
+				if(!_reviewphotoSwipe) {
+					_reviewphotoSwipe = new Swiper('#layerReviewPhoto .swiper-container', {
+						pagination: {
+							el: "#layerReviewPhoto .swiper-pagination",
+							type: "fraction",
+						},
+					});
+				}
+			}
+		});
+
+        // 22.07.04 이현진 추가 푸터 사업자 정보 확인
+		$('.btnCmpInfo').on('click', function(e) {
+			e.preventDefault();
+			var _this = 	$('.btnCmpInfo');
+			if ( _this.hasClass('on') ) {
+				$(this).removeClass('on');
+				$('.offDiv').show();
+				$('.onDiv').hide();
+			} else {
+				$(this).addClass('on');
+				$('.offDiv').hide();
+				$('.onDiv').show();
+				$('#wrap').scrollTop($('#wrap').scrollTop() + 54)
+			}
+		});
+	</script>
+</body>
+</html>

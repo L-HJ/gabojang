@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/global.css" />
+	<script src="../assets/script/jquery-1.8.2.min.js"></script>
+	<script src="../assets/script/jquery-ui.min.1.8.js"></script>
+	<script src="../assets/script/jquery.ui.touch-punch.min.js"></script>
+	<script src="../assets/script/idangerous.swiper.js"></script>
+	<script src="../assets/script/jquery.popupoverlay.js"></script>
+	<script src="../assets/script/common.js"></script>
+	<script src="../assets/script/jquery.nice-select.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader scroll">
+			<div class="header">
+				<a href="./page05_1.html" class="btnHback txtHide">이전</a>
+				<h1>주문(결제)하기</h1>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents">
+				<div class="subBasicCont">
+					<div class="orderSection">
+						<div class="orderDelivery orderDelivery01">
+							<div class="titOrder">
+								<h3>배달주소</h3>
+								<a href="javascript:;" class="btnSty1 btnChange">변경</a>
+							</div>
+							<div class="addressWrap on">
+								<div class="adrDelivery">
+									<dl>
+										<dt>서울특별시 금천구 가산동 371-28 우림라이온스밸리 1차</dt>
+										<dd>[도로명] 가산디지털1로 168 우림라이온스밸리 1차</dd>
+									</dl>
+									<div class="input01">
+										<input type="text" name="" value="" placeholder="상세주소 입력" />
+										<div class="inputFocus"></div>
+									</div>
+								</div>
+								<div class="adrDeliverySch">
+									<div class="btnAdrBox">
+										<a href="#" class="btnAdrSch">주소 검색</a>
+										<a href="javascript:;" class="btnRecentAdr layerRecentAdr_open">최근 주소</a>
+									</div>
+									<div class="">
+										<img src="../assets/images/sub/address.jpg" alt="" style="width:100%;" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr class="hrBk" />
+						<div class="basketList bkOrder">
+							<div class="titOrder">
+								<a href="javascript:void(0)" class="btnOrder">
+									<h3>주문내역</h3>
+									<span class="count">총 2건</span>
+								</a>
+							</div>
+							<div class="odListWrap">
+								<ul class="odList">
+									<li>
+										<strong>울산중앙전통시장</strong>
+										<p class="txtMenu wordType02">[혜리네 맛있는 반찬] 정말 맛있는 고등어 오븐구이 2인분(1마리)</p> <!-- 22.11.03 이현진 class wordType02 추가 -->
+										<span>가격 : 6,300원</span>
+										<em>6,300원</em>
+									</li>
+									<li>
+										<p class="txtMenu wordType02">[울산 과일맛집] 상금달콤 맛있는 딸기 한 바구니</p> <!-- 22.11.03 이현진 class wordType02 추가 -->
+										<span>가격 : 24,500원</span>
+										<em>24,500원</em>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<hr class="hrBk" />
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>주문자 정보</h3>
+								<p class="txtSub1">* 입력한 연락처로 주문관련 알림이 발송됩니다.</p>
+							</div>
+							<div class="orderMem">
+								<dl>
+									<dt>주문자 연락처</dt>
+									<dd>
+										<div class="input01">
+											<input type="text" name="" value="010-1234-5678" readOnly="readOnly" />
+										</div>
+										<a href="#" class="btnSty1">변경</a>
+									</dd>
+								</dl>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">주문자와 수령인이 달라요</span>
+								</label>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">안심번호 사용</span>
+								</label>
+							</div>
+						</div>
+
+						<!-- 주문자 번호 새로 입력 -->
+						<hr class="hrBk" />
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>주문자 정보</h3>
+								<p class="txtSub1">* 입력한 연락처로 주문관련 알림이 발송됩니다.</p>
+							</div>
+							<div class="orderMem">
+								<dl>
+									<dt>주문자 연락처</dt>
+									<dd class="otherDd">
+										<div class="input01">
+											<input type="text" name="" value="" placeholder="휴대폰 번호 입력" />
+											<div class="inputFocus"></div>
+										</div>
+										<a href="#" class="btnSty2">발송</a>
+										<!-- <a href="#" class="btnSty2">재발송</a> -->
+									</dd>
+								</dl>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">주문자와 수령인이 달라요</span>
+								</label>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">안심번호 사용</span>
+								</label>
+							</div>
+						</div>
+						<!-- // 주문자 번호 새로 입력 -->
+
+						<!-- 주문자 번호 새로 입력 + 인증번호 -->
+						<hr class="hrBk" />
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>주문자 정보</h3>
+								<p class="txtSub1">* 입력한 연락처로 주문관련 알림이 발송됩니다.</p>
+							</div>
+							<div class="orderMem">
+								<dl>
+									<dt>주문자 연락처</dt>
+									<dd class="otherDd">
+										<div class="input01">
+											<input type="text" name="" value="" placeholder="휴대폰 번호 입력" />
+											<div class="inputFocus"></div>
+										</div>
+										<a href="#" class="btnSty2">발송</a>
+										<!-- <a href="#" class="btnSty2">재발송</a> -->
+									</dd>
+								</dl>
+								<dl>
+									<dt>인증번호</dt>
+									<dd class="otherDd">
+										<div class="input01">
+											<input type="text" name="" value="" placeholder="인증번호 입력" />
+											<div class="inputFocus"></div>
+										</div>
+										<a href="#" class="btnSty2">확인</a>
+									</dd>
+								</dl>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">주문자와 수령인이 달라요</span>
+								</label>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">안심번호 사용</span>
+								</label>
+							</div>
+						</div>
+						<!--// 주문자 번호 새로 입력 + 인증번호 -->
+
+						<!-- 주문자 번호 인증번호 전송 -->
+						<hr class="hrBk" />
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>주문자 정보</h3>
+								<p class="txtSub1">* 입력한 연락처로 주문관련 알림이 발송됩니다.</p>
+							</div>
+							<div class="orderMem">
+								<dl>
+									<dt>주문자 연락처</dt>
+									<dd class="otherDd">
+										<div class="input01">
+											<input type="text" name="" value="010-1234-5678" />
+											<div class="inputFocus"></div>
+										</div>
+										<a href="#" class="btnSty2">재발송</a>
+									</dd>
+								</dl>
+								<dl>
+									<dt>인증번호</dt>
+									<dd class="otherDd">
+										<div class="input01">
+											<input type="text" name="" value="12345" placeholder="인증번호 입력"  class="countCon" />
+											<div class="inputFocus"></div>
+											<div class="inputCount">
+												<a href="#" class="txtHide">취소</a>
+												<em>00:00</em>
+											</div>
+										</div>
+										<a href="#" class="btnSty2">확인</a>
+									</dd>
+								</dl>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">주문자와 수령인이 달라요</span>
+								</label>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">안심번호 사용</span>
+								</label>
+							</div>
+						</div>
+						<!--// 주문자 번호 인증번호 전송 -->
+						
+						<!-- 주문자와 수령인이 다를경우 -->
+						<hr class="hrBk" />
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>주문자 정보</h3>
+								<p class="txtSub1">* 입력한 연락처로 주문관련 알림이 발송됩니다.</p>
+							</div>
+							<div class="orderMem">
+								<dl>
+									<dt>주문자 연락처</dt>
+									<dd class="otherDd">
+										<div class="input01">
+											<input type="text" name="" value="010-1234-5678" placeholder="휴대폰 번호 입력" />
+											<div class="inputFocus"></div>
+										</div>
+										<a href="#" class="btnSty2">재발송</a>
+									</dd>
+								</dl>
+								<dl>
+									<dt>인증번호</dt>
+									<dd class="otherDd">
+										<div class="input01">
+											<input type="text" name="" value="12345" placeholder="인증번호 입력" />
+											<div class="inputFocus"></div>
+										</div>
+										<a href="#" class="btnSty2">확인</a>
+									</dd>
+								</dl>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" checked />
+									<span class="icon"></span>
+									<span class="text">주문자와 수령인이 달라요</span>
+								</label>
+								<dl>
+									<dt>수령인 연락처</dt>
+									<dd>
+										<div class="input01">
+											<input type="text" name="" value="010-1234-5678" readOnly="readOnly" />
+										</div>
+									</dd>
+								</dl>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">안심번호 사용</span>
+								</label>
+							</div>
+						</div>
+						<!--// 주문자와 수령인이 다를경우 -->
+
+						<hr class="hrBk" />
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>요청사항</h3>
+							</div>
+							<div class="orderMem">
+								<dl>
+									<dt>매장 요청사항</dt>
+									<dd>
+										<div class="input01">
+											<input type="text" name="" value="" placeholder="요청사항 입력(50자 이내)" />
+											<div class="inputFocus"></div>
+										</div>
+									</dd>
+								</dl>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">다음에도 사용</span>
+								</label>
+							</div>
+                            <!-- 22.06.30 이현진 미노출 -->
+							<!-- <div class="enviro">
+                                <div class="box">
+                                    <label class="rdoBox2">
+                                        <input type="radio" name="rdo1_1" value="" checked="checked" />
+                                        <span class="icon"></span>
+                                        <span class="text">품절상품 있는 경우 품절 상품 제외하고 배달해 주세요.</span>
+                                    </label>
+                                    <label class="rdoBox2">
+                                        <input type="radio" name="rdo1_1" value="" />
+                                        <span class="icon"></span>
+                                        <span class="text">품절상품 있는 경우 주문 취소해주세요.</span>
+                                    </label>
+                                </div>
+                            </div> -->
+                            <!-- 22.06.30 이현진 미노출 -->
+							<div class="orderRider riderType02"> <!-- 22.06.30 이현진 class riderType02 추가 -->
+								<dl>
+									<dt>배달 요청사항</dt>
+									<dd>
+										<div class="selectBox02">
+											<select name="selectBox">
+											  <option value="1">조심히 안전하게 와주세요.</option>
+											  <option value="2">문 앞에 두고 벨 눌러주세요.</option>
+											  <option value="3">벨 누르지말고 노크해주세요.</option>
+											  <option value="4">도착하기전에 전화주세요.</option>
+											  <option value="5" selected>직접입력</option>
+											</select>
+										</div>
+										<div class="input01">
+											<input type="text" name="" value="" placeholder="요청사항 입력(50자이내)" />
+											<div class="inputFocus"></div>
+										</div>
+									</dd>
+								</dl>
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+									<span class="text">다음에도 사용</span>
+								</label>
+							</div>
+						</div>
+						<hr class="hrBk" />
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>결제방식</h3>
+							</div>
+							<div class="orderMem orderMem02">
+								<div class="payHow">
+									<div class="input01">
+										<input type="text" name="" value="카드결제" readOnly="readOnly" />
+									</div>
+									<a href="javascript:;" class="btnSty1 layerPayHow_open btnSty01">변경</a>
+								</div>
+							</div>
+						</div>
+						<hr class="hrBk" />
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>
+									할인쿠폰
+									<a href="javascript:void(0)" class="txtMyCp layerCoupon_open">보유 쿠폰 <strong>1장</strong></a>
+								</h3>
+							</div>
+							<div class="orderMem orderMem03">
+								<div class="payHow">
+									<div class="input01">
+										<input type="text" name="" value="- 3,000원" readOnly="readOnly" />
+									</div>
+									<a href="javascript:;" class="btnSty1 layerCoupon_open btnSty01">변경</a>
+								</div>
+							</div>
+						</div>
+						<hr class="hrBk" />
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>결제금액</h3>
+							</div>
+							<div class="totalPay">
+								<dl>
+									<dt>주문금액</dt>
+									<dd>38,100원</dd>
+								</dl>
+								<dl>
+									<dt>
+										배달금액
+										<a href="javascript:;" class="btnSty1 layerDeliveryGuide_open">자세히</a>
+									</dt>
+									<dd>+ 2,000원</dd>
+								</dl>
+								<dl class="totalSum">
+									<dt>총 결제금액</dt>
+									<dd>40,100원</dd>
+								</dl>
+							</div>
+						</div>
+						<hr class="hrBk" />
+                        <!-- 22.07.04 이현진 추가 -->
+                        <div class="orderDelivery">
+							<div class="titOrder">
+								<h3>배송 시 주의사항 안내</h3>
+							</div>
+							<div class="delAttention">
+                                <em>품절상품이</em> 발생하는 경우 <span>“품절 상품을 제외하고 배달됩니다.”</span> 주문 접수 후 “주문내역”에서 배송현황을 확인해주세요. 
+                            </div>
+						</div>
+						<hr class="hrBk" />
+                        <!-- // 22.07.04 이현진 추가 -->
+						<div class="orderDelivery">
+							<div class="titOrder">
+								<h3>약관동의</h3>
+							</div>
+							<div class="orderAgree">
+								<label class="chkBox3">
+									<input type="checkbox" name="" value="" />
+									<span class="icon"></span>
+                                    <!-- 22.07.20 이현진 수정 -->
+									<span class="text"><em>(필수)</em> <a href="javascript:void(0)" class="layerInfoAgree_open">개인정보 제3자 제공</a></span>
+                                    <!-- // 22.07.20 이현진 수정 -->
+								</label>
+								<p class="terms">내용 및 결제에 동의합니다.</p>
+							</div>
+                            <!-- 22.07.04 이현진 추가 -->
+                            <div class="confirmTxt"><strong>위 약관에 동의하며, 만 14세 이상임을 확인했습니다.</strong></div>  
+                            <!-- // 22.07.04 이현진 추가 -->
+						</div>
+
+						<!-- 주문하기 -->
+						<div class="totalBasketDiv">
+							<a href="#" class="btnTy1">
+								<span>40,100원 주문하기</span>
+							</a>
+						</div>
+						<!--// 주문하기 -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+
+		<!-- 최근주소 레이어 -->
+		<div id="layerRecentAdr">
+			<div class="layerBox">
+				<div class="layerHd">
+					<h3>최근 주소</h3>
+				</div>
+				<div class="layerCnt">
+					<div class="myAdrList">
+						<div class="group">
+							<ul>
+								<li>
+									<div class="adr">
+										<p>울산광역시 남구 중앙로 201</p>
+										<span>지번 : 울산광역시 남구 신정동 646-4</span>
+									</div>
+									<span class="typify">최근<br>주소</span>
+								</li>
+								<li>
+									<div class="adr">
+										<p>서울 금천구 가산디지털1로 168 우림라이온스밸리 1차</p>
+										<span>지번 : 서울 금천구 가산디지털1로 168 우림라이온스밸리1차 A동 1401호</span>
+									</div>
+									<a href="#" class="txtHide btnAdrDel">주소삭제</a>
+								</li>
+								<li>
+									<div class="adr">
+										<p>서울 강남구 삼성동 156</p>
+										<span>지번 : 서울 강남구 삼성로 530</span>
+									</div>
+									<a href="#" class="txtHide btnAdrDel">주소삭제</a>
+								</li>
+								<li>
+									<div class="adr">
+										<p>서울 강남구 삼성동 156</p>
+										<span>지번 : 서울 강남구 삼성로 530</span>
+									</div>
+									<a href="#" class="txtHide btnAdrDel">주소삭제</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<a href="javascript:;" class="txtHide btnLayerClose1 layerRecentAdr_close">닫기</a>
+			</div>
+		</div>
+		<!--// 최근주소 레이어 -->
+
+		<!-- 결제방식 레이어 -->
+		<div id="layerPayHow">
+			<div class="layerBox">
+				<div class="layerHd">
+					<h3>결제방식 선택</h3>
+				</div>
+				<div class="layerCnt">
+					<div class="payHowList">
+						<ul>
+							<li>
+								<label class="rdoBox2">
+									<input type="radio" name="rdo6_2" value="" checked="checked" />
+									<span class="icon"></span>
+									<span class="text">카드결제</span>
+								</label>
+							</li>
+							<li>
+								<label class="rdoBox2">
+									<input type="radio" name="rdo6_2" value="" />
+									<span class="icon"></span>
+									<span class="text">울산상품권</span>
+								</label>
+							</li>
+							<li>
+								<label class="rdoBox2">
+									<input type="radio" name="rdo6_2" value="" />
+									<span class="icon"></span>
+									<span class="text">울산상품권</span>
+								</label>
+							</li>
+							<li>
+								<label class="rdoBox2">
+									<input type="radio" name="rdo6_2" value="" />
+									<span class="icon"></span>
+									<span class="text">울산상품권</span>
+								</label>
+							</li>
+							<li>
+								<label class="rdoBox2">
+									<input type="radio" name="rdo6_2" value="" />
+									<span class="icon"></span>
+									<span class="text">울산상품권</span>
+								</label>
+							</li>
+							<li>
+								<label class="rdoBox2">
+									<input type="radio" name="rdo6_2" value="" />
+									<span class="icon"></span>
+									<span class="text">만나서카드결제(배달)</span>
+								</label>
+							</li>
+							<li>
+								<label class="rdoBox2">
+									<input type="radio" name="rdo6_2" value="" />
+									<span class="icon"></span>
+									<span class="text">만나서현금결제(배달)</span>
+								</label>
+							</li>
+							<li>
+								<label class="rdoBox2">
+									<input type="radio" name="rdo6_2" value="" />
+									<span class="icon"></span>
+									<span class="text">만나서상품권결제(배달)</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<a href="javascript:;" class="txtHide btnLayerClose1 layerPayHow_close">닫기</a>
+			</div>
+		</div>
+		<!--// 결제방식 레이어 -->
+
+		<!-- 할인쿠폰 레이어 -->
+		<div id="layerCoupon">
+			<div class="layerBoxBt">
+				<div class="layerHd">
+					<h3>사용 가능 쿠폰</h3>
+				</div>
+				<div class="layerCnt">
+					<div class="myCoupon">
+						<h3>보유 쿠폰 <strong>1</strong>장</h3>
+						<div class="couponList">
+							<!-- 쿠폰 -->
+							<div class="coupon confirm">
+								<a href="#">
+									<div class="seCnt">
+										<div class="box">
+											<p>울산중앙전통시장 할인쿠폰</p>
+											<strong>5,000원 할인</strong>
+											<dl>
+												<dt>25,900원 이상 주문 시</dt>
+												<dd>~ 2022.05.11 까지</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="btnUse"><span>사용하기</span></div>
+								</a>
+							</div>
+							<!--// 쿠폰 -->
+
+							<!-- 쿠폰 -->
+							<div class="coupon">
+								<a href="#">
+									<div class="seCnt">
+										<div class="box">
+											<p>울산중앙전통시장 할인쿠폰</p>
+											<strong>5,000원 할인</strong>
+											<dl>
+												<dt>25,900원 이상 주문 시</dt>
+												<dd>~ 2022.05.11 까지</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="btnUse"><span>사용하기</span></div>
+								</a>
+							</div>
+							<!--// 쿠폰 -->
+						</div>
+					</div>
+				</div>
+				<a href="javascript:;" class="txtHide btnLayerClose1 layerCoupon_close">닫기</a>
+			</div>
+		</div>
+		<!--// 할인쿠폰 레이어 -->
+
+		<!-- 배달비 안내 레이어 -->
+		<div id="layerDeliveryGuide">
+			<div class="layerBox">
+				<div class="layerHd">
+					<h3>배달금액 안내</h3>
+				</div>
+				<div class="layerCnt">
+					<div class="infoDiv3">
+						<ul>
+							<li>최소 주문금액 : 15,000원</li>
+							<li>배달요금은 배달거리, 주문금액, 주문시각  등에 따라 달라질 수 있습니다. </li>
+							<li>배달안내 : 주말 공유일은 배달이 불가합니다. 영업시간 2시간 전부터는 익일 배송됩니다. 당일배송이 어려운 경우 주문이 불가할 수 있습니다.</li>
+						</ul>
+						<h5 class="normal">기본 배달금액</h5>
+						<div class="feeTable">
+							<table>
+							<colgroup>
+								<col width="60%" />
+								<col width="*" />
+							</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">주문금액</th>
+										<th scope="col">배달금액</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr><td><strong>15,000원 이상</strong></td>
+									<td><strong>0원</strong></td>
+								</tr></tbody>
+							</table>
+						</div>
+						<h5>지역별 추가 배달금액</h5>
+						<div class="feeTable">
+							<table>
+							<colgroup>
+								<col width="60%" />
+								<col width="*" />
+							</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">배달지역</th>
+										<th scope="col">추가 배달금액</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>신정1동, 신정2동, 신정3동, 신정4동, 신정5동</td>
+										<td>+500원</td>
+									</tr>
+									<tr>
+										<td>대현동, 수암동, 옥동</td>
+										<td>+1,000원</td>
+									</tr>
+									<tr>
+										<td><strong>반구1동, 반구2동, 복산1동, 복산2동, 중앙동, 태화동</strong></td>
+										<td><strong>+1,500원</strong></td>
+									</tr>
+									<tr>
+										<td>약사동, 병영1동, 병영2동, 선암동, 다운동, 삼호동</td>
+										<td>+2,000원</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h5>시간별 추가 배달금액</h5>
+						<div class="feeTable">
+							<table>
+							<colgroup>
+								<col width="60%" />
+								<col width="*" />
+							</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">배달시간</th>
+										<th scope="col">추가 배달금액</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><strong>평일 (20:00 ~ 22:00)</strong></td>
+										<td><strong>+500원</strong></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<a href="javascript:;" class="txtHide btnLayerClose1 layerDeliveryGuide_close">닫기</a>
+			</div>
+		</div>
+		<!--// 배달비 안내 레이어 -->
+
+        <!-- 22.07.20 이현진 추가 -->
+            <!-- 개인정보 제3자 제공동의 레이어 -->
+		<div id="layerInfoAgree">
+			<div class="layerBox">
+				<div class="layerHd">
+					<h3>개인정보 제3자 제공동의</h3>
+				</div>
+				<div class="layerCnt">
+					<div class="infoAgreeBox">
+                        <h4><span>1.</span>제휴가게</h4> 
+                        <div class="agreeTbl">
+                            <table>
+                                <colgroup>
+                                    <col width="50%" />
+                                    <col width="50%" />
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">개인정보 제공받는 자</th>
+                                        <td>제휴가게(상점명)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">제공받는 자의 개인 정보이용 목적</th>
+                                        <td>주문 관리, 배달 서비스 제공, 민원 응대</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">제공하는 개인정보의 항목</th>
+                                        <td>주소(포장 시 제외),휴대폰 번호 (안심번호 적용 시제외), 주문내역, 요청사항</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">개인정보 보유 및 이용기간</th>
+                                        <td>48시간(단, 관련법령에 따라 보관이 필요한 경우</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h4><span>2.</span>제휴 배달 대행 업체 (포장 또는 가게 자체 배달 시 제외)</h4> 
+                        <div class="agreeTbl">
+                            <table>
+                                <colgroup>
+                                    <col width="50%" />
+                                    <col width="50%" />
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">개인정보 제공받는 자</th>
+                                        <td>제휴 배달 대행 업체(<a href="javascript:void(0);" class="openBtn deliveryAgency_open">리스트</a>)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">제공받는 자의 개인 정보이용 목적</th>
+                                        <td>배달 서비스 제공</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">제공하는 개인정보의 항목</th>
+                                        <td>주소,휴대폰 번호(안심번호 적용 시 제외), 주문내역, 요청사항</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">개인정보 보유 및 이용기간</th>
+                                        <td>제공 목적 달성 후 지체없이 파기(단, 관련 법령에 따라 보관이 필요한 경우 해당기간까지 보관) </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p><span>·</span>개인정보 제3자 제공 동의를 거부할 권리가 있습니다. 다만, 필수 동의 거부 시 서비스 이용이 불가합니다.</p>
+                    </div>
+				</div>
+				<a href="javascript:;" class="txtHide btnLayerClose1 layerInfoAgree_close">닫기</a>
+			</div>
+		</div>
+            <!-- // 개인정보 제3자 제공동의 레이어 -->
+            <!-- 배달대행업체 레이어 -->
+        <div id="deliveryAgency">
+            <div class="layerBox">
+                <div class="layerCnt">
+                    <p>(주)로지올(생각대로), (주)메쉬코리아(부릉), (주)비욘드아이앤씨, 바로고, 젠달리, 빠른배송, 스피드딜리버리, 다우기술, 이어드림, 스파이더</p>
+                </div>
+            </div>
+            <a href="javascript:;" class="btnLayerClose1 deliveryAgency_close">닫기</a>
+		</div>
+            <!--// 배달대행업체 레이어 -->
+        <!-- // 22.07.20 이현진 추가 -->
+	</div>
+
+	<script>
+		commonPop('#layerRecentAdr'); //최근주소 레이어
+		commonPop('#layerPayHow'); //결제방식 선택 
+		commonPop('#layerDeliveryGuide'); //배달비 안내 
+		commonPop('#layerCoupon', {
+			focusdelay: 400,
+			vertical: 'bottom'
+		}); // 할인쿠폰 레이어
+        commonPop('#layerInfoAgree'); // 22.07.20 이현진 개인정보 제3자 제공동의 추가
+        commonPop('#deliveryAgency'); //22.07.20 이현진 배달대행업체 추가
+
+		// 주소 변경
+		$('.btnChange').on('click', function(){
+			$(this).parent('.titOrder').siblings('.addressWrap').toggleClass('on');
+			
+			if($('.addressWrap').hasClass('on') == true) {
+				$('.adrDelivery').css('dispaly','block');
+				$('.adrDeliverySch').css('display','none');
+			} else {
+				$('.adrDelivery').css('dispaly','none');
+				$('.adrDeliverySch').css('display','block');
+			}
+		});
+
+		// 주문내역 slide
+		$('.btnOrder').on('click', function(){
+			$(this).toggleClass('on');
+			$('.odListWrap').slideToggle();
+		});
+
+		// 배달 요청사항 select 커스텀
+		$('.selectBox02').find('select').niceSelect();
+	</script>
+</body>
+</html>

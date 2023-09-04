@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/global.css" />
+	<script src="../assets/script/jquery-1.8.2.min.js"></script>
+	<script src="../assets/script/jquery-ui.min.1.8.js"></script>
+	<script src="../assets/script/jquery.ui.touch-punch.min.js"></script>
+	<script src="../assets/script/idangerous.swiper.js"></script>
+	<script src="../assets/script/jquery.popupoverlay.js"></script>
+	<script src="../assets/script/common.js"></script>
+	<script src="../assets/script/jquery.nice-select.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header">
+			<div class="header">
+				<a href="#" class="btnHback txtHide">이전</a>
+				<h1>울산중앙전통시장</h1>
+				<a href="#" class="btnHshare txtHide">공유하기</a>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents">
+				<!-- 비주얼 -->
+				<div class="visualSwipe">
+					<div class="swiper-container">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide layerMenuPhoto_open"><img src="../assets/images/sub/subVisual.jpg" alt="매장 대표사진" /></li>
+							<li class="swiper-slide layerMenuPhoto_open"><img src="../assets/images/sub/subVisual.jpg" alt="매장 대표사진" /></li>
+						</ul>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<!--// 비주얼 -->
+
+				<div class="subSection">
+					<!-- 매장 소개 -->
+					<div class="storeWrap">
+						<h3>울산중앙전통시장</h3>
+						<ul class="storeInfo">
+							<li><span>영업시간</span><a href="javascript:void(0)" class="storeTime">06:00 ~ 17:00</a></li>
+							<li><span>배달안내</span><a href="javascript:void(0)" class="storeDetail">상세보기</a></li>
+							<!-- 22.07.04 이현진 수정 -->
+                            <!-- <li><span>배달주소</span>울산광역시 중구 번영로 329 112-7번지 3층</li> -->
+                            <li><span>최소 주문 금액</span>12,000원</li>
+                            <!-- // 22.07.04 이현진 수정 -->
+						</ul>
+						<div class="downCoupon">
+							<a href="#">최대 <span>5,000원</span> 쿠폰 받기</a>
+						</div>
+						<div class="searchWrap">
+							<div class="searchCon">
+								<input type="text" value="" class="clearInput" placeholder="무엇을 찾고 계신가요?" />
+								<a href="#" class="searchBtn txtHide">검색</a>
+							</div>
+						</div>
+					</div>
+					<hr class="hrBk" />
+					<!--// 매장 소개 -->
+
+					<!--  영업시간, 배달안내 레이어 팝업 -->
+					<div class="storePop">
+						<div class="popBox">
+							<div class="popTop">
+								<strong>영업시간</strong>
+								<a href="javascript:void(0)" class="popClose txtHide">닫기</a>
+							</div>
+							<div class="popCon">
+								<ul class="popList01">
+									<li>
+										월요일 : 06:00~17:00
+										<span>(브레이크 타임 : 15:00~17:00)</span>
+									</li>
+									<li>
+										화요일 : 06:00~17:00
+										<span>(브레이크 타임 : 15:00~17:00)</span>
+									</li>
+									<li>수요일 : 06:00~17:00</li>
+									<li>목요일 : 06:00~17:00</li>
+									<li>금요일 : 06:00~17:00</li>
+									<li>토요일 : 06:00~17:00</li>
+									<li>일요일 : <em>휴무</em></li>
+								</ul>
+							</div>
+						</div>
+						<div class="popBox">
+							<div class="popTop">
+								<strong>배달안내</strong>
+								<a href="javascript:void(0)" class="popClose txtHide">닫기</a>
+							</div>
+							<div class="popCon">
+								<ul class="popList02"> 
+									<li>
+										배달 : 삼산동, 삼산1동, 삼산2동, 석남동, 학성동
+									</li>
+									<li>
+										배달안내 : 주말 공휴일은 배달이 불가합니다. 영업시간 2시간 전부터는 익일 배송됩니다. 당일배송이 어려운 경우 주문이 불가할 수 있습니다.
+									</li>
+                                    <!-- 22.07.04 이현진 추가 -->
+                                    <li>
+                                        시장주소 : 울산광역시 중구 변영로 329 112-7번지 3층
+                                    </li>
+                                    <!-- // 22.07.04 이현진 추가 -->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--  // 영업시간, 배달안내 레이어 팝업 -->
+
+					<!-- 안내드립니다 -->
+					<div class="noticeBox">
+						<h4>안내드립니다!</h4>
+						<p>고객들과 함께 더불어 성장해 가는 시장! 전통을 지키고 새로움을 추구하는시장! 가까운 장터, 즐거운 시장! 울산중앙전통시장에서 정을 나눕시다! 고객들과 함께 더불어 성장해 가는 시장! 전통을 지키고 새로움을 추구하는시장! 가까운 장터, 즐거운 시장! 울산중앙전통시장에서 정을 나눕시다! </p>
+						<a href="#" class="btnMore txtHide"></a>
+					</div>
+					<hr class="hrBk" />
+					<!-- // 안내드립니다 -->
+					
+					<!-- 상품,정보 탭 -->
+					<div class="storeTabWrap">
+						<div class="tabTop">
+							<ul>
+								<li class="on"><a href="javascript:void(0)">상품</a></li>
+								<li><a href="javascript:void(0)">정보</a></li>
+							</ul>
+						</div>
+						<div class="tabCon">
+							<div class="tabBox">
+								<div class="tabSwipe">
+									<div class="swiper-container">
+										<ul class="swiper-wrapper">
+											<li class="swiper-slide on"><a href="javascript:voild(0)">전체 상품</a></li>
+											<li class="swiper-slide"><a href="javascript:voild(0)">정육/계란</a></li>
+											<li class="swiper-slide"><a href="javascript:voild(0)">야채/신선</a></li>
+											<li class="swiper-slide"><a href="javascript:voild(0)">축산</a></li>
+											<li class="swiper-slide"><a href="javascript:voild(0)">과일</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="tabArrange">
+									<select>
+										<option value="1">인기순</option>
+										<option value="2">좋아요순</option>
+										<option value="3">낮은 가격순</option>
+										<option value="4">높은 가격순</option>
+										<option value="5">최신순</option>
+									</select>
+									<!-- 22.07.05 이현진 미노출 -->
+                                    <!-- <div class="arrangeBtn">
+                                            <a href="javascript:voild(0)" class="on txtHide">목록형</a>
+                                            <a href="javascript:voild(0)" class="txtHide">리스트형</a>
+                                        </div> -->
+                                    <!-- // 22.07.05 이현진 미노출 -->
+								</div>
+								<div class="checkBox">
+									<label>
+										<input type="checkbox" />
+										<span class="checkIcon"></span>
+										<span class="checkTxt">구매가능만 보기</span>
+									</label>
+								</div>
+								<div class="arrangeList">
+									<ul>
+										<li>
+											<div class="imgWrap"><a href="#"><img src="../assets/images/sub/img01.jpg" alt="상품이미지" /></a></div>
+											<div class="txtWrap">
+												<div class="putIcon">
+													<a href="javascript:void(0)" class="on">12</a>
+                                                    <!-- 22.07.01 이현진 수정 -->
+                                                    <a href="javascript:void(0)" class="txtHide cartBtn" onclick="toast('장바구니에 담았습니다.')">장바구니</a>
+                                                    <div id="toast"></div>
+                                                    <!-- // 22.07.01 이현진 수정 -->
+												</div>
+												<p>국내산 맛있는 생선 모듬회 중/대</p>
+												<span>철수네 수산횟집</span>
+												<strong>27,700원</strong>
+											</div>
+										</li>
+								        <li class="ready"><!-- 22.07.13 ready 클래스 추가 -->
+											<div class="imgWrap"><a href="#"><img src="../assets/images/sub/img02.jpg" alt="상품이미지" /></a></div>
+											<div class="txtWrap">
+												<div class="putIcon">
+													<a href="javascript:void(0)" class="likeSt">0</a>
+													<!-- 22.07.01 이현진 수정 -->
+                                                    <a href="javascript:void(0)" class="txtHide cartBtn" onclick="toast('장바구니에 담았습니다.')">장바구니</a>
+                                                    <div id="toast"></div>
+                                                    <!-- // 22.07.01 이현진 수정 -->
+												</div>
+												<p>속이알찬 포기배추김치 1kg</p>
+												<span>울산 종갓집 김치</span>
+												<strong>7,400원</strong>
+											</div>
+										</li>
+										<li class="soldOut">
+											<div class="imgWrap"><a href="#"><img src="../assets/images/sub/img03.jpg" alt="상품이미지" /></a></div>
+											<div class="txtWrap">
+												<div class="putIcon">
+													<a href="javascript:void(0)" class="likeSt">0</a>
+													<!-- 22.07.01 이현진 수정 -->
+                                                    <a href="javascript:void(0)" class="txtHide cartBtn" onclick="toast('장바구니에 담았습니다.')">장바구니</a>
+                                                    <div id="toast"></div>
+                                                    <!-- // 22.07.01 이현진 수정 -->
+												</div>
+												<p>대추방울토마토, 1kg 1팩</p>
+												<span>신선농장</span>
+												<strong>9,990원</strong>
+											</div>
+										</li>
+										<li>
+											<div class="imgWrap">
+                                                <!-- 22.07.04 이현진 수정 -->
+                                                <a href="#">
+                                                    <!-- <img src="../assets/images/sub/img04.jpg" alt="상품이미지" /> -->
+                                                </a>
+                                                <!-- // 22.07.04 이현진 수정 -->
+                                            </div>
+											<div class="txtWrap">
+												<div class="putIcon">
+													<a href="javascript:void(0)" class="likeSt">0</a>
+													<!-- 22.07.01 이현진 수정 -->
+                                                    <a href="javascript:void(0)" class="txtHide cartBtn" onclick="toast('장바구니에 담았습니다.')">장바구니</a>
+                                                    <div id="toast"></div>
+                                                    <!-- // 22.07.01 이현진 수정 -->
+												</div>
+												<p>정성가득 수제 떡갈비</p>
+												<span>영희네 떡갈비</span>
+												<strong>11,200원</strong>
+											</div>
+										</li>
+										<li>
+											<div class="imgWrap"><a href="#"><img src="../assets/images/sub/img05.jpg" alt="상품이미지" /></a></div>
+											<div class="txtWrap">
+												<div class="putIcon">
+													<a href="javascript:void(0)" class="likeSt">0</a>
+													<!-- 22.07.01 이현진 수정 -->
+                                                    <a href="javascript:void(0)" class="txtHide cartBtn" onclick="toast('장바구니에 담았습니다.')">장바구니</a>
+                                                    <div id="toast"></div>
+                                                    <!-- // 22.07.01 이현진 수정 -->
+												</div>
+												<p>입에서 살살 녹는 한돈 암돼지 양념갈비찜 1kg</p>
+												<span>울산 친절축산</span>
+												<strong>15,600원</strong>
+											</div>
+										</li>
+										<li>
+											<div class="imgWrap"><a href="#"><img src="../assets/images/sub/img06.jpg" alt="상품이미지" /></a></div>
+											<div class="txtWrap">
+												<div class="putIcon">
+													<a href="javascript:void(0)" class="likeSt on">74</a>
+													<!-- 22.07.01 이현진 수정 -->
+                                                    <a href="javascript:void(0)" class="txtHide cartBtn" onclick="toast('장바구니에 담았습니다.')">장바구니</a>
+                                                    <div id="toast"></div>
+                                                    <!-- // 22.07.01 이현진 수정 -->
+												</div>
+												<p>온가족이 즐기는 달콤닭강정 1박스(소)</p>
+												<span>울산 허브닭강정</span>
+												<strong>8,500원</strong>
+											</div>
+										</li>
+										<li>
+											<div class="imgWrap"><a href="#"><img src="../assets/images/sub/img07.jpg" alt="상품이미지" /></a></div>
+											<div class="txtWrap">
+												<div class="putIcon">
+													<a href="javascript:void(0)" class="likeSt">6</a>
+													<!-- 22.07.01 이현진 수정 -->
+                                                    <a href="javascript:void(0)" class="txtHide cartBtn" onclick="toast('장바구니에 담았습니다.')">장바구니</a>
+                                                    <div id="toast"></div>
+                                                    <!-- // 22.07.01 이현진 수정 -->
+												</div>
+												<p>보슬보슬 햇감자, 1.5kg/박스</p>
+												<span>울산 싱싱야채</span>
+												<strong>27,700원</strong>
+											</div>
+										</li>
+										<li>
+											<div class="imgWrap"><a href="#"><img src="../assets/images/sub/img08.jpg" alt="상품이미지" /></a></div>
+											<div class="txtWrap">
+												<div class="putIcon">
+													<a href="javascript:void(0)" class="likeSt">12</a>
+													<!-- 22.07.01 이현진 수정 -->
+                                                    <a href="javascript:void(0)" class="txtHide cartBtn" onclick="toast('장바구니에 담았습니다.')">장바구니</a>
+                                                    <div id="toast"></div>
+                                                    <!-- // 22.07.01 이현진 수정 -->
+												</div>
+												<p>향이 좋은 국산 돌미나리 1팩 200g</p>
+												<span>울산 싱싱야채</span>
+												<strong>3,300원</strong>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="tabBox">
+								<div class="storeTxtInfo">
+									<h4>시장소개</h4>
+									<div class="infoDiv1 infoDiv">
+										<div class="imgWrap"><img src="../assets/images/sub/store_intro.jpg" alt="시장소개이미지" /></div>
+										<p>식자재 도매시장으로 입지를 구축하여 저렴한 가격 경쟁력과 시장에서 일괄 구매가 가능한 특장점으로 기존 음식점, 병원, 유치원 등 사업체가 단골고객입니다.<br/> 울산에서 최고의 성장가능성이 있는 상권으로 부상하고 있는 울산중앙전통시장입니다.</p>
+									</div>
+									<h4>영업시간 안내</h4>
+									<div class="infoDiv2 infoDiv">
+										<ul class="infoList1">
+											<li>월요일 : 10:00 ~ 22:00</li>
+											<li>화요일 : 10:00 ~ 22:00</li>
+											<li>수요일 : 10:00 ~ 22:00</li>
+											<li>목요일 : 10:00 ~ 22:00</li>
+											<li>금요일 : 10:00 ~ 22:00</li>
+											<li>토요일 : 10:00 ~ 22:00</li>
+											<li>일요일 : 10:00 ~ 22:00</li>
+										</ul>
+									</div>
+									<h4>휴무일 안내</h4>
+									<div class="infoDiv3 infoDiv">
+										<ul class="infoList1">
+											<li>매월 첫째주 일요일 휴무</li>
+											<li>매월 둘째주 일요일 휴무</li>
+											<li>매월 셋째주 일요일 휴무</li>
+											<li>매월 넷째주 일요일 휴무</li>
+										</ul>
+									</div>
+									<h4>매장정보</h4>
+									<div class="infoDiv4 infoDiv">
+										<ul class="infoList2">
+											<li><span>전화번호</span><a href="tel:051-241-5000">051-241-5000</a></li>
+											<li>
+												<span>시장위치</span>울산광역시 중구 번영로 329
+												<div class="listMap">
+													<img src="../assets/images/sub/map_img.jpg" alt="맵이미지" />
+													<div class="mapBtn">
+														<a href="#">주소복사</a>
+														<a href="#">지도보기</a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<h4>배달금액 안내</h4>
+									<div class="infoDiv5">
+										<ul>
+											<li>최소 주문금액 : 15,000원</li>
+											<li>배달요금은 배달거리, 주문금액, 주문시각  등에 따라 달라질 수 있습니다. </li>
+											<li>배달안내 : 주말 공유일은 배달이 불가합니다. 영업시간 2시간 전부터는 익일 배송됩니다. 당일배송이 어려운 경우 주문이 불가할 수 있습니다.</li>
+										</ul>
+										<h5>기본 배달금액</h5>
+										<div class="feeTable">
+											<table>
+											<colgroup>
+											<col width="60%" />
+											<col width="*" />
+											</colgroup>
+												<thead>
+													<tr>
+														<th scope="col">주문금액</th>
+														<th scope="col">배달금액</th>
+													</tr>
+												</thead>
+												<tbody>
+													<td><strong>15,000원 이상</strong></td>
+													<td><strong>0원</strong></td>
+												</tbody>
+											</table>
+										</div>
+										<h5>지역별 추가 배달금액</h5>
+										<div class="feeTable">
+											<table>
+											<colgroup>
+											<col width="60%" />
+											<col width="*" />
+											</colgroup>
+												<thead>
+													<tr>
+														<th scope="col">배달지역</th>
+														<th scope="col">추가 배달금액</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>신정1동, 신정2동, 신정3동, 신정4동, 신정5동</td>
+														<td>+500원</td>
+													</tr>
+													<tr>
+														<td>대현동, 수암동, 옥동</td>
+														<td>+1,000원</td>
+													</tr>
+													<tr>
+														<td><strong>반구1동, 반구2동, 복산1동, 복산2동, 중앙동, 태화동</strong></td>
+														<td><strong>+1,500원</strong></td>
+													</tr>
+													<tr>
+														<td>약사동, 병영1동, 병영2동, 선암동, 다운동, 삼호동 </td>
+														<td>+2,000원</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<h5>시간별 추가 배달금액</h5>
+										<div class="feeTable">
+											<table>
+											<colgroup>
+											<col width="60%" />
+											<col width="*" />
+											</colgroup>
+												<thead>
+													<tr>
+														<th scope="col">배달시간</th>
+														<th scope="col">추가 배달금액</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td><strong>평일 (20:00 ~ 22:00)</strong></td>
+														<td><strong>+500원</strong></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // 상품,정보 탭 -->
+
+					<!-- 영업 준비중 -->
+					<div class="totalBasketDiv">
+						<a href="#" class="btnTy1 btnDisabled">
+							<span>영업 준비 중 입니다.</span>
+						</a>
+					</div>
+					<!--// 영업 준비중 -->
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+
+		<!-- 푸터 -->
+		<div id="footer">
+			<ul>
+				<li><a href="#">이용약관</a></li>
+				<li><a href="#">개인정보처리방침</a></li>
+			</ul>
+			<p>
+				울산시장앱 by
+				<img src="../assets/images/sub/foot_logo.png" alt="스탬프팡" />
+			</p>
+		</div>
+		<!--// 푸터 -->
+	</div>
+
+	<!-- 메뉴 상세 이미지 레이어 -->
+	<div id="layerMenuPhoto" class="layerMenuPhoto">
+		<div class="bgModal100"></div>
+		<div class="menuPhotoBox">
+			<div class="photo">
+				<div class="swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><img src="../assets/images/sub/subVisual.jpg" alt="매장 대표사진" /></li>
+						<li class="swiper-slide"><img src="../assets/images/sub/subVisual.jpg" alt="매장 대표사진" /></li>
+					</ul>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<a href="#" class="btnLyClose1 txtHide layerMenuPhoto_close">닫기</a>
+	</div>
+	<!--// 메뉴 상세 이미지 레이어 -->
+	<script>
+		//header
+		$(window).scroll(function(){
+			chgScrollClass();
+		});
+		function chgScrollClass() {
+			if($(window).scrollTop() <= $('.storeWrap').offset().top) {
+				$('#header').removeClass('scroll');
+				$('#header h1').stop().animate({opacity: 0}, 40);
+			} else {
+				$('#header').addClass('scroll');
+				$('#header h1').stop().animate({opacity: 1}, 40);
+			}
+		}
+		chgScrollClass();
+		
+		//input 글씨 지우기
+		$('.clearInput').each(function(i, v) {
+			var $inp = $(v);
+			var $cle = $('<span>', {class: 'btnTxtDel'});
+			$cle.on("touchstart click", function(e) {
+				e.preventDefault();
+				$inp.val("").trigger("input");
+			});
+			$inp.after($cle);
+			$inp.on("input", function(){
+				$cle.toggle(Boolean($(this).val()));
+			});
+			$inp.focus(function() {
+				$cle.toggle(Boolean($(this).val()));
+			});
+		});
+
+		// 비주얼 스와이프
+		var _visualSwipe = new Swiper('.visualSwipe .swiper-container', {
+			pagination: {
+				el: ".visualSwipe .swiper-pagination",
+				type: "fraction",
+			},
+		});
+
+		// 영업시간, 배달안내 레이어 팝업
+		var storeWrap = $('.storeWrap ');
+		var storePop = $('.storePop');
+		storeWrap.find('.storeTime').on('click', function(){
+			storePop.fadeIn().find('.popBox:first-child').css('display','block');
+		});
+		storeWrap.find('.storeDetail').on('click', function(){
+			storePop.fadeIn().find('.popBox:last-child').css('display','block');
+		});
+		storePop.find('.popClose').on('click', function(){
+			$(this).parents('.storePop, .popBox').fadeOut();
+		});
+		
+		// 검색창 스크롤 시 상단 고정
+		$(window).scroll(function(){
+			var winH = $(window).scrollTop();
+			var search = $('.downCoupon');
+			var searchOffset = search.offset().top;
+
+			if(winH >= searchOffset) {
+				$('.searchWrap').addClass('fixed');
+			} else {
+				$('.searchWrap').removeClass('fixed');
+			};
+		});
+
+		var cnt = 0;		
+		// 상품,정보 탭
+		$('.tabCon .tabBox').hide().eq(0).show();
+		$('.tabTop li').click(function() {
+			cnt = $(this).index()
+			$('.tabTop li').removeClass('on').eq(cnt).addClass('on');
+			$('.tabCon .tabBox').hide().eq(cnt).fadeIn();
+		});
+
+		// 상품 카테고리 스와이프
+		var _visualSwipe2 = new Swiper('.tabSwipe .swiper-container', {
+			slidesPerView: 'auto',
+		});
+
+		// 상품 카테고리 클릭 시
+		$('.tabSwipe').find('.swiper-slide').on('click', function(){
+			cnt = $(this).index();
+			$('.tabSwipe').find('.swiper-slide').removeClass('on').eq(cnt).addClass('on');
+		});
+		
+		// 인기순 select 커스텀
+		$('.tabArrange').find('select').niceSelect();
+
+		// 2열, 리스트형 버튼
+		var arrangeBtn = $('.arrangeBtn').find('a');
+		arrangeBtn.on('click', function(){
+			cnt = $(this).index();
+			$('.arrangeBtn').find('a').removeClass('on').eq(cnt).addClass('on');
+
+			if($('.arrangeBtn').find('a:last-child').hasClass('on') == true) {
+				$('.arrangeList').addClass('active');
+			} else {
+				$('.arrangeList').removeClass('active');
+			};
+		});
+
+		// 찜하기
+		$('.likeSt').on('click', function(){
+			$(this).toggleClass('on');
+		});
+
+		//메뉴 상세 레이어
+		var _photoSwipe;
+		commonPop('#layerMenuPhoto', {
+			opacity: 100,
+			autozindex: true,
+			onopen: function() {
+				if(!_photoSwipe) {
+					_photoSwipe = new Swiper('.menuPhotoBox .swiper-container', {
+						pagination: {
+							el: ".menuPhotoBox .swiper-pagination",
+							type: "fraction",
+						},
+					});
+				}
+			}
+		});
+
+		// 소개 show, hide
+		$('.noticeBox .btnMore').on('click', function(e) {
+			e.preventDefault();
+			if ($(this).parent().hasClass('active')) {
+				$('.noticeBox').removeClass('active');
+			} else {
+				$('.noticeBox').addClass('active');
+			}
+		});
+	</script>
+</body>
+</html>

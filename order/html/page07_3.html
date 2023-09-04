@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/global.css" />
+	<script src="../assets/script/jquery-1.8.2.min.js"></script>
+	<script src="../assets/script/jquery-ui.min.1.8.js"></script>
+	<script src="../assets/script/jquery.ui.touch-punch.min.js"></script>
+	<script src="../assets/script/idangerous.swiper.js"></script>
+	<script src="../assets/script/jquery.popupoverlay.js"></script>
+	<script src="../assets/script/common.js"></script>
+	<script src="../assets/script/jquery.nice-select.js"></script>
+</head>
+
+<body>
+	<!-- 알럿 레이어 -->
+	<div class="layerAlertCom">
+		<div class="layerBox">
+			<div class="layerCnt">
+				<div class="layerAlert">
+					<p>입력 가능한 글자수를<br />초과하였습니다.</p>
+					<div class="btnRight">
+						<a href="#" class="btnAlert1">확인</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--// 알럿 레이어 -->
+	<script type="text/javascript">
+		commonPop('.layerAlertCom', {
+			autoopen: true
+		});
+	</script>
+</body>
+</html>

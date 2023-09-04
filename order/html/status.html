@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset= utf-8" />
+	<title>울산시장앱 워크시트</title>
+	<style type="text/css">
+		* {	margin:0;padding:0;}
+		body {padding:20px;	font-family:Tahoma, Sans-Serif; color:#333; font-size:11px; background-color:#fff;}
+		/* title */
+		h1 {color:#000; letter-spacing:-2px;}
+		.currentsite {display:block; position:absolute; right:40px; top:20px;}
+		#mwork fieldset {border:none;}
+		#mwork legend {display:none;}
+		#mwork h3 {}
+		#mwork h4 {}
+		#mwork h5 {}
+		#mwork h6 {}
+		/* table */
+		#mwork {padding-top:30px;}
+		#mwork table {width:100%; border-collapse:collapse; border:1px solid #666;}
+		#mwork caption {text-align:left; font-size:200%; color:#999;}
+		#mwork .index td {background:#ccc;}
+		#mwork .indexred td {background:#fdd;}
+		#mwork .indexgreen td {background:#dfd;}
+		#mwork .indexblue td {background:#ddf;}
+		#mwork .indexyellow td {background:#fff1c7;}
+		#mwork .line td {border-top:3px solid #666;}
+		#mwork .line2 td {border-top:2px solid #666;}
+		#mwork th {padding:6px; border:1px solid #666; color:#ccc; font-size:110%; background-color:#000;}
+		#mwork td {padding:4px; padding-left:10px; border:1px solid #666; background-color:#eee;}
+		#mwork td.type,
+		#mwork .filename {padding-left:0; text-align:center;}
+		#mwork .depth1 {}
+		#mwork .depth2 {}
+		#mwork .depth3 {}
+		#mwork .depth4 {}
+		#mwork .memo {color:#000;}
+		/* task */
+		#mwork .done {padding:0; font-weight:bold;	text-align:center; color:#090;}
+		#mwork .undone {padding:0; font-weight:bold; text-align:center; color:#900;}
+		#mwork .finish {padding:0; font-weight:bold; text-align:center; color:#000;}
+		#mwork .task {}
+		#mwork .start {}
+		/* effect */
+		#mwork a,
+		#mwork a:link, #mwork a:visited {color:#009; text-decoration:none;}
+		#mwork a:hover, #mwork a:active {color:#00f; text-decoration:underline;}
+		/* #mwork td:hover {background-color:#ddd;} */
+		/* memo */
+		#mwork del {color:#900;}
+		#mwork .add {color:#900; font-size:18px; font-weight:bold;}
+		/* note */
+		#note {margin:10px 0 10px 0; padding:10px; border:2px dotted #000; background:#eee; letter-spacing:0;}
+		#note p {padding-left:10px;}
+		#note pre {margin-top:10px; margin-bottom:10px; font-family:Tahoma, Sans-Serif; color:#333; font-size:small;}
+		#note h1 {}
+		#note h2 {margin:0px 0 10px 0;}
+		#note .notice{color:red;}
+		#note .comment {display:block; margin:5px 0 10px 0; color:#666;}
+		#note .issue {color:#900;}
+		#note .add {color:#900; font-weight:bold;}
+		#note ul li {margin-left:20px;}
+		td em {color:#f00; font-style:normal;}
+		td strong {color:red; font-weight:bold;}
+        td.modify {font-size:11px; color:#333; padding:0 !important; text-align:center;}
+		tr.orange td{background-color:#FFE4CA !important;}
+		tr.purple td{background-color:#F1E6FF !important;}
+		tr.green td{background-color:#DEEED5 !important;}
+		tr.yellow td{background-color:#FCFBDC !important;}
+		tr.blue td{background-color:#E1F5FD !important;}
+		tr.red td{background-color:#FFE6E7 !important;}
+		tr.white td{background-color:#FFF !important;}
+		tr.brown td{background-color:#E6DCD2 !important;}
+		.redfont {color:#f00 !important;}
+		.modify {margin-top:5px; padding:5px; border:1px dotted #000; font-size:13px; background-color:#ccc;}
+		.modify h2 {margin-bottom:3px;}
+	</style>
+	<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+	<script type="text/javascript">
+		(function ($) {
+			$.fn.start = function (options) {
+				var settings = $.extend({
+						title: 'h2.title',
+						content: '#mwork',
+						files: 'tbody tr',
+						start: 'td.modify',
+						index: 0,
+						openAll: false,
+						speed: 'fast'
+					}, options),
+					all_sections = this,
+					header = $('div.header');
+				return this.each(function () {
+					var self = this,
+						$self = $(self),
+						title_text = [],
+						completed = 0;
+					self.section_title = $(settings.title, $self);
+					self.content = $(settings.content, $self);
+					self.files = $(settings.files, $self);
+					self.files.each(function () {
+						var start = $(settings.start, this);
+						start.each(function () {
+							var text = $(this).text();
+							if (text) {
+								completed++;
+							}
+						});
+					});
+					self.files
+						.bind('mouseenter', function () {
+							$(this).addClass('hover');
+						})
+						.bind('mouseleave', function () {
+							$(this).removeClass('hover');
+						});
+					title_text = [self.section_title.text(), '<span class="page-count">(', completed, '/', self.files.length, ')</span>'];
+					self.section_title.html(title_text.join(''));
+					self.section_title.bind('click', function () {
+						self.content.slideToggle(settings.speed);
+					});
+					if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+						self.content.css('display', 'block');
+					}
+				});
+			};
+			$(document).ready(function () {
+				$('#mwork').start({ openAll: true });
+				$('#total').text($('tbody tr').length);
+				$('tbody tr:even').addClass('even');
+				$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+			});
+		}(jQuery));
+	</script>
+</head>
+
+<body>
+	<script type="text/javascript">document.body.className += ' js';</script>
+	<h1>울산시장앱 Publishing Work Sheet</h1>
+	<div id="mwork">
+		<h2 class="title">울산시장앱</h2>
+		<fieldset>
+		<table class="mwork" summary="WebPublisher Procedure Sheet" border="1">
+			<caption>Publishing ProcedureSheet</caption>
+			<colgroup>
+			<col width="15%" />
+			<col width="15%" />
+			<col width="18%" />
+			<col width="15%" />
+			<col width="8%" />
+			<col width="8%" />
+			<col width="*" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>메뉴명1</th>
+					<th>메뉴명2</th>
+					<th>메뉴명3</th>
+					<th>FileName/Link</th>
+					<th>담당자</th>
+					<th>상태</th>
+					<th>Memo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="orange">
+					<td class="depth1" rowspan="2">메인</td>
+					<td class="depth2">영업준비중</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./main00_1.html">main00_1.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="orange">
+					<td class="depth2">주문가능</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./main00_2.html">main00_2.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="blue">
+					<td class="depth1" rowspan="2">검색</td>
+					<td class="depth2">검색 결과</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_1.html">page01_1.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="blue">
+					<td class="depth2">검색결과 없을 때</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_2.html">page01_2.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="yellow">
+					<td class="depth1">상품별 상세</td>
+					<td class="depth2"></td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page02_1.html">page02_1.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth1" rowspan="2">리뷰 신고</td>
+					<td class="depth2">내용 등록 전</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page03_1.html">page03_1.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth2">내용 등록 후</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page03_2.html">page03_2.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth1">[레이어] 리뷰 신고 성공</td>
+					<td class="depth2"></td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page03_3.html">page03_3.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth1">[레이어] 리뷰 신고 실패</td>
+					<td class="depth2"></td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page03_4.html">page03_4.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="green">
+					<td class="depth1" rowspan="2">상점별 상세</td>
+					<td class="depth2">장바구니에 담겨있을 때</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page04_1.html">page04_1.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="green">
+					<td class="depth2">시장 영업중이 아닌 경우</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page04_2.html">page04_2.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth1" rowspan="2">장바구니</td>
+					<td class="depth2">장바구니</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page05_1.html">page05_1.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth2">상품 없을 때</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page05_2.html">page05_2.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth1">주문결제하기</td>
+					<td class="depth2"></td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page06_1.html">page06_1.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="gray">
+					<td class="depth1" rowspan="4">리뷰쓰기</td>
+					<td class="depth2">등록버튼 비활성</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page07_1.html">page07_1.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="gray">
+					<td class="depth2">등록버튼 활성</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page07_2.html">page07_2.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="gray">
+					<td class="depth2">[레이어] 입력 글자수 초과</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page07_3.html">page07_3.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="gray">
+					<td class="depth2">[레이어] 리뷰 작성 완료</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page07_4.html">page07_4.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+                <tr class="blue">
+                    <td class="depth1" rowspan="2">주문</td>
+					<td class="depth2">주문완료</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page08_1.html">page08_1.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">진행중</td>
+					<td class="memo"></td>
+				</tr>
+                <tr class="blue">
+					<td class="depth2">주문실패</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page08_2.html">page08_2.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">진행중</td>
+					<td class="memo"></td>
+				</tr>
+			</tbody>
+		</table>
+		</fieldset>
+	</div>
+</body>
+</html>

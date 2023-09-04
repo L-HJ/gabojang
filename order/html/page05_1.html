@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../assets/css/global.css" />
+	<script src="../assets/script/jquery-1.8.2.min.js"></script>
+	<script src="../assets/script/jquery-ui.min.1.8.js"></script>
+	<script src="../assets/script/jquery.ui.touch-punch.min.js"></script>
+	<script src="../assets/script/idangerous.swiper.js"></script>
+	<script src="../assets/script/jquery.popupoverlay.js"></script>
+	<script src="../assets/script/common.js"></script>
+	<script src="../assets/script/jquery.nice-select.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader scroll">
+			<div class="header">
+				<a href="./main00_2.html" class="btnHback txtHide">이전</a>
+				<h1>장바구니</h1>
+				<a href="#" class="btnAllDel">전체삭제</a>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents">
+				<div class="basketList type02"> <!-- 22.10.24 이현진 class type02 추가 -->
+					<div class="basketGp">
+						<h3>울산중앙전통시장</h3>
+						<ul>
+							<li>
+								<p class="txtMenu wordType02">[순이네 맛있는 반찬] 정말 맛있는 고등어 오븐구이 2인분(1마리)</p> <!-- 22.11.03 이현진 class wordType02 추가 -->
+								<ul>
+									<li>가격 : 6,300원</li>
+								</ul>
+								<div class="qtyDiv">
+									<h4>6,300원</h4>
+									<div class="qtySeting">
+										<a href="#" class="btnMinus txtHide">감소</a>
+										<input type="text" name="" value="4" readonly="readonly" />
+										<a href="#" class="btnPlus txtHide">증가</a>
+									</div>
+								</div>
+								<a href="#" class="btnDel txtHide">삭제</a>
+							</li>
+							<li>
+								<p class="txtMenu wordType02">[울산 과일맛집] 상큼달콤 맛있는 딸기한 바구니</p> <!-- 22.11.03 이현진 class wordType02 추가 -->
+								<ul>
+									<li>가격 : 24,500원</li>
+								</ul>
+								<div class="qtyDiv">
+									<h4>24,500원</h4>
+									<div class="qtySeting">
+										<a href="#" class="btnMinus txtHide">감소</a>
+										<input type="text" name="" value="4" readonly="readonly" />
+										<a href="#" class="btnPlus txtHide">증가</a>
+									</div>
+								</div>
+								<a href="#" class="btnDel txtHide">삭제</a>
+							</li>
+						</ul>
+						<div class="totalPrice">
+							<dl class="total">
+								<dt>총 상품금액</dt>
+								<dd>31,800원</dd>
+							</dl>
+							<dl>
+								<dt>배송비</dt>
+								<dd>3,000원</dd>
+							</dl>
+                            <!-- 22.11.15 이현진 추가 -->
+                            <dl>
+								<dt>최소 주문 금액</dt>
+								<dd>40,000원</dd>
+							</dl>
+                            <!-- // 22.11.15 이현진 추가 -->
+						</div>
+                        <!-- 22.10.24 이현진 수정 -->
+						<div class="btnGoodsAdd">
+							<a href="./main00_2.html"><span>울산중앙전통시장</span> 상품 추가하기</a>
+						</div>
+                        <div class="btns">
+							<a href="./page06_1.html" class="btnTy3 on">2건 주문하기</a>
+						</div>
+                        <!-- // 22.10.24 이현진 수정 -->
+
+                        <!-- 22.06.30 이현진 미노출 -->
+						<!-- <hr class="hrBk" /> -->
+                        <!-- // 22.06.30 이현진 미노출 -->
+					</div>
+                    
+                    <!-- 22.06.30 이현진 미노출 -->
+					<!-- <div class="basketGp">
+                        <h3>울산중앙전통시장</h3>
+                        <ul>
+                            <li class="unBuying">
+                                <p class="txtMenu">[순이네 맛있는 반찬] 정말 맛있는 고등어 오븐구이 2인분(1마리)</p>
+                                <ul>
+                                    <li>가격 : 6,300원</li>
+                                </ul>
+                                <div class="qtyDiv">
+                                    <h4>구매불가</h4>
+                                    <div class="qtySeting">
+                                        <a href="#" class="btnMinus txtHide">감소</a>
+                                        <input type="text" name="" value="4" readonly="readonly" />
+                                        <a href="#" class="btnPlus txtHide">증가</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="btnDel txtHide">삭제</a>
+                            </li>
+                            <li>
+                                <p class="txtMenu">[울산 과일맛집] 상큼달콤 맛있는 딸기한 바구니</p>
+                                <ul>
+                                    <li>가격 : 24,500원</li>
+                                </ul>
+                                <div class="qtyDiv">
+                                    <h4>24,500원</h4>
+                                    <div class="qtySeting">
+                                        <a href="#" class="btnMinus txtHide">감소</a>
+                                        <input type="text" name="" value="4" readonly="readonly" />
+                                        <a href="#" class="btnPlus txtHide">증가</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="btnDel txtHide">삭제</a>
+                            </li>
+                        </ul>
+                        <div class="totalPrice">
+                            <dl class="total">
+                                <dt>총 상품금액</dt>
+                                <dd>31,800원</dd>
+                            </dl>
+                            <dl>
+                                <dt>배송비</dt>
+                                <dd>3,000원</dd>
+                            </dl>
+                        </div>
+                        22.10.24 이현진 수정
+                                            <div class="btnGoodsAdd">
+                                                <a href="#"><span>울산중앙전통시장</span> 상품 추가하기</a>
+                                            </div>
+                        <div class="btns">
+                                                <a href="#" class="btnTy3 on">1건 주문하기</a>
+                                            </div>
+                        // 22.10.24 이현진 수정
+                        <hr class="hrBk" />
+                    </div>
+                    
+                    <div class="basketGp">
+                        <h3>울산중앙전통시장</h3>
+                        <ul>
+                            <li class="unBuying">
+                                <p class="txtMenu">[순이네 맛있는 반찬] 정말 맛있는 고등어 오븐구이 2인분(1마리)</p>
+                                <ul>
+                                    <li>가격 : 6,300원</li>
+                                </ul>
+                                <div class="qtyDiv">
+                                    <h4>구매불가</h4>
+                                    <div class="qtySeting">
+                                        <a href="#" class="btnMinus txtHide">감소</a>
+                                        <input type="text" name="" value="4" readonly="readonly" />
+                                        <a href="#" class="btnPlus txtHide">증가</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="btnDel txtHide">삭제</a>
+                            </li>
+                            <li class="unBuying">
+                                <p class="txtMenu">[울산 과일맛집] 상큼달콤 맛있는 딸기한 바구니</p>
+                                <ul>
+                                    <li>가격 : 24,500원</li>
+                                </ul>
+                                <div class="qtyDiv">
+                                    <h4>구매불가</h4>
+                                    <div class="qtySeting">
+                                        <a href="#" class="btnMinus txtHide">감소</a>
+                                        <input type="text" name="" value="4" readonly="readonly" />
+                                        <a href="#" class="btnPlus txtHide">증가</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="btnDel txtHide">삭제</a>
+                            </li>
+                        </ul>
+                        <div class="totalPrice">
+                            <dl class="total">
+                                <dt>총 상품금액</dt>
+                                <dd>31,800원</dd>
+                            </dl>
+                            <dl>
+                                <dt>배송비</dt>
+                                <dd>0원</dd>
+                            </dl>
+                        </div>
+                        22.10.24 이현진 추가
+                                            <div class="btnGoodsAdd">
+                                                <a href="#"><span>울산중앙전통시장</span> 상품 추가하기</a>
+                                            </div>
+                        // 22.10.24 이현진 추가
+                        <div class="btns">
+                            <a href="#" class="btnTy3 btnDisabled">상품을 확인해주세요.</a>
+                        </div>
+                        <hr class="hrBk" />
+                    </div>
+                    
+                    <div class="basketGp">
+                        <h3>울산중앙전통시장</h3>
+                        <ul>
+                            <li>
+                                <p class="txtMenu">[순이네 맛있는 반찬] 정말 맛있는 고등어 오븐구이 2인분(1마리)</p>
+                                <ul>
+                                    <li>가격 : 6,300원</li>
+                                </ul>
+                                <div class="qtyDiv">
+                                    <h4>5,000원</h4>
+                                    <div class="qtySeting">
+                                        <a href="#" class="btnMinus txtHide">감소</a>
+                                        <input type="text" name="" value="4" readonly="readonly" />
+                                        <a href="#" class="btnPlus txtHide">증가</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="btnDel txtHide">삭제</a>
+                            </li>
+                        </ul>
+                        <div class="totalPrice">
+                            <dl class="total">
+                                <dt>총 상품금액</dt>
+                                <dd>31,800원</dd>
+                            </dl>
+                            <dl>
+                                <dt>배송비</dt>
+                                <dd>0원</dd>
+                            </dl>
+                        </div>
+                        22.10.24 이현진 추가
+                                            <div class="btnGoodsAdd">
+                                                <a href="#"><span>울산중앙전통시장</span> 상품 추가하기</a>
+                                            </div>
+                        // 22.10.24 이현진 추가
+                        <div class="btns">
+                            <a href="#" class="btnTy3 btnDisabled">영업 준비 중 입니다.</a>
+                        </div>
+                    </div> -->
+                    <!-- // 22.06.30 이현진 미노출 -->
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+	</div>
+</body>
+</html>
