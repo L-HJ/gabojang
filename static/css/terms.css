@@ -1,0 +1,84 @@
+/*20.04.06 전체변경_운영자와 통일*/
+
+body {font-size:12px; color:#000; font-family: "Noto Sans CJK KR", sans-serif; background:#fafafa; word-wrap:break-word; -webkit-user-select: none;}
+
+.b-menu { position:absolute; right:0; top:33px; text-align:right; }
+.b-menu li { line-height:18px; }
+.b-menu a { color:white; text-decoration:underline; }
+.blind { z-index:-1; position: absolute; display: block; left: 0; top: 0; overflow: hidden; visibility: hidden; width: 0; height: 0; text-indent: -9999px; }
+/* #wrap { background: #ccc; } */
+#hdrWrap { z-index: 2; position: relative; padding-bottom: 15px; }
+#hdr { position: relative; width: 959px; height: 112px; margin-left: auto; margin-right: auto; border-right: 1px solid #fff; }
+#hdr .bi,
+#hdr .notice { position: absolute; }
+#hdr .bi { left: px; top: px; width: 189px; height: 111px; border-left: 1px solid #fff; border-right: 1px solid #fff; }
+#hdr .bi a { overflow: hidden; display: block; width: 100%; height: 100%; text-indent: -9999px; background: url(../images/common/logo_h1.png) no-repeat 20px 55px; }
+
+/* content */
+#terms_use { padding-bottom: 115px; }
+#terms_use .hd { zoom: 1; position: relative; padding: 33px 0 4px 19px; border-bottom: 1px solid #b8cad6; }
+#terms_use .hd h2 { font-size: 0; line-height: 0; }
+#terms_use .hd a { position: absolute; right: 0px; bottom: 5px; color: #fe3231; }
+#terms_use .cont-w { margin:10px; }
+#terms_use .tmsg { padding-left: 18px; padding-top: 2px; line-height: 36px;/*font-size: 0; line-height: 0;*/word-break:break-all; border: 2px solid #3265da; font-weight:bold; font-size:14px; }
+#terms_use .tmsg strong { color:#2e6cf5; }
+#terms_use .anchor-hd { zoom: 1; overflow: hidden; margin-top: 40px; padding:0 17px; }
+#terms_use .anchor-hd h3 { float: left; font-size: 14px; color: #333; letter-spacing: -1px; }
+#terms_use .anchor-hd h3 a { float: left; padding: 0 15px; }
+#terms_use .anchor-hd h3 .bar { position: relative; top: 3px; float: left; width: 1px; height: 13px; font-size: 0; line-height: 0; background: #bbb; }
+#terms_use .anchor-hd h3 a.now { font-weight: bold; color: #000; }
+#terms_use .anchor-hd h3 a:hover { text-decoration: underline; }
+
+#terms_use .anchor-hd dl { float: right; }
+#terms_use .anchor-hd dt,
+#terms_use .anchor-hd dd { float: left; }
+#terms_use .anchor-hd dt { margin-right: 3px; }
+#terms_use .anchor-list { zoom: 1; overflow: hidden; margin-top: 5px; padding-left: 22px; padding-top: 5px; padding-bottom: 20px; border-top: 1px solid #3265da; border-bottom: 1px solid #3265da; }
+#terms_use .anchor-list ul { float: left; }
+#terms_use .anchor-list ul li { float: left; width: 100%; padding-top: 18px; line-height: 1.25; }
+#terms_use .anchor-list dt { float: left; /*width: 60px;*/ margin-right: 5px; color: #333; } /* 이진수 수정 211116*/
+#terms_use .anchor-list a { font-weight: bold; color: #2e6cf5; letter-spacing: -1px; }
+#terms_use .anchor-list a:hover { text-decoration: underline; }
+#terms_use .anchor-list .list1 { width: 301px; }
+#terms_use .anchor-list .list2 { /*width: 296px;*/ width:390px; } /* 이진수 수정 211116*/
+#terms_use .anchor-list .list3 { /*width: 265px;*/ width:270px; }
+#terms_use .terms-c { padding-left: 20px; padding-right: 17px; }
+#terms_use .terms-c h3,
+#terms_use .terms-c h4 { margin-top: 25px; font-size: 12px; font-weight: bold; color: #333; letter-spacing: -1px; }
+#terms_use .terms-c p,
+#terms_use .terms-c ul { margin-top: 5px; }
+#terms_use .terms-c ul { font-size: 0; line-height: 0; }
+#terms_use .terms-c p,
+#terms_use .terms-c li { line-height: 16px; }
+#terms_use .terms-c li { zoom: 1; position: relative; padding-top: 5px; padding-left: 20px; }
+#terms_use .terms-c li .num { position: absolute; left: 0; width: 17px; font-size: 12px; }
+
+caption { display:none; }
+table {margin: 10px;}
+th, td { border:1px solid #ccc; word-wrap:break-word; padding: 2px 10px; }
+
+/*201124 yeon add s*/
+#terms_use #layerPopup{
+    padding:20px; 
+    border:1px solid #ccc; 
+    box-shadow: 10px 10px 10px #ccc;
+    border-radius: 5px;
+    position:absolute; 
+    background:#fff;
+}
+
+#terms_use #contents a {
+    color: #0351ff;
+    text-decoration: underline;
+}
+
+#terms_use #layerPopup button{
+    cursor:pointer;
+}
+/*201124 yeon add e*/
+
+/* 20211122 이진수 추가*/
+#gong a {
+    color: #0351ff;
+    text-decoration: underline;
+}

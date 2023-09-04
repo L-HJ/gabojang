@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../static/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/base.css" />
+	<script src="../static/js/jquery-1.8.2.min.js"></script>
+	<script src="../static/js/jquery-ui.min.1.8.js"></script>
+	<script src="../static/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="../static/js/idangerous.swiper.js"></script>
+	<script src="../static/js/jquery.popupoverlay.js"></script>
+	<script src="../static/js/jquery.sticky.js"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader2">
+			<div class="header">
+				<h1 class="txtH1">마이페이지</h1>
+				<div class="btnHr">
+					<a href="./page06_1.html" class="txtHide btnAlarm on">알람</a>
+				</div>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents" class="subCnts5">
+				<div class="mypageSetion">
+					<div class="mpLoginBox">
+						<a  href="#" class="loginGo"><span>반가워요</span>로그인이 필요합니다</a>
+					</div>
+					<div class="mpMenu">
+						<ul>
+							<li class="mp1"><a href="./page16_1.html">이벤트</a></li>
+							<li class="mp3"><a href="./page07_1.html">공지</a></li>
+							<li class="mp4"><a href="./page08_1.html">문의</a></li>
+						</ul>
+					</div>
+					<hr class="hrBk" />
+					<div class="mpListMenu">
+						<ul>
+							<li><a href="./page03_3.html">이용약관</a></li>
+							<li><span>현재버전<em>v 1.4.0</em></span></li>
+						</ul>
+					</div>
+                    <div class="csNumDiv">
+                        <p><a href="tel:1234-5678">울산시장앱 고객센터<strong>1234-5678</strong></a></p>
+                    </div>
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+
+		<!-- 하단 고정 바 -->
+		<nav class="tabBar">
+			<a href="./main00_1.html" class="txtHide btnHome">홈</a>
+			<ul>
+				<li><a href="./page11_1.html"><span>시장보기</span></a></li>
+				<li><a href="./page10_1.html"><span>주문내역</span><em class="num">3</em></a></li>
+				<li></li>
+				<li><a href="./page12_1.html"><span>찜</span></a></li>
+				<li class="active"><a href="./page03_2.html"><span>마이페이지</span></a></li>
+			</ul>
+		</nav>
+		<!--// 하단 고정 바 -->
+	</div>
+
+	<script type="text/javascript">
+		//탭바
+		$('.tabBar ul li a').on('click', function (e) {
+			//e.preventDefault(); 22.06.30 이현진 수정
+			var _li = $(this).parent();
+			_li.addClass('active').siblings().removeClass('active');
+		});
+	</script>
+</body>
+</html>

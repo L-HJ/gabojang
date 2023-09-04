@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../static/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/base.css" />
+	<script src="../static/js/jquery-1.8.2.min.js"></script>
+	<script src="../static/js/jquery-ui.min.1.8.js"></script>
+	<script src="../static/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="../static/js/idangerous.swiper.js"></script>
+	<script src="../static/js/jquery.popupoverlay.js"></script>
+	<script src="../static/js/jquery.sticky.js"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader1">
+			<div class="header">
+				<div class="btnList"><a href="./page03_1.html" class="txtHide">뒤로가기</a></div>
+				<h1>알림설정</h1>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents">
+				<div class="setupAlarm">
+					<div class="group">
+						<h3>기본 푸시 알림</h3>
+						<ul>
+							<li>
+								<span>주문 상태 알림</span>
+								<div class="setupSwitch">
+									<input type="checkbox" name="onoffswitch" class="switchChk" id="setup1" checked="checked" />
+									<label class="switchLabel" for="setup1">
+										<em class="switchLabelInner"></em>
+										<em class="switchBar"></em>
+									</label>
+								</div>
+							</li>
+							<li>
+								<span>공지 알림</span>
+								<div class="setupSwitch">
+									<input type="checkbox" name="onoffswitch" class="switchChk" id="setup2" />
+									<label class="switchLabel" for="setup2">
+										<em class="switchLabelInner"></em>
+										<em class="switchBar"></em>
+									</label>
+								</div>
+							</li>
+							<li>
+								<span>1:1 문의 답변 알림</span>
+								<div class="setupSwitch">
+									<input type="checkbox" name="onoffswitch" class="switchChk" id="setup3" />
+									<label class="switchLabel" for="setup3">
+										<em class="switchLabelInner"></em>
+										<em class="switchBar"></em>
+									</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<hr class="hrBk" />
+					<div class="group">
+						<h3>
+							시장별 광고성(마케팅) 알림
+							<a href="#layerTooltips" class="btnHelp"><img src="../static/img/sub/btn_help.png" alt="도움말" /></a>
+						</h3>
+						<!-- 시장별 광고성(마케팅) 알림 레이어 툴팁 -->
+						<div class="layerTooltips" id="layerTooltips">
+							<div class="toolTip">
+								<h3>시장별 광고성(마케팅) 알림</h3>
+								<p>
+									시장별 광고성(이벤트) 푸시 및<br />
+									SMS 수신여부에 대한 설정입니다.<br />
+									OFF로 설정하셔도 정보성(주문/공<br />
+									지 등)의 알림은 수신 가능합니다.
+								</p>
+							</div>
+							<a href="#layerTooltips" class="txtHide btnTipClose">닫기</a>
+						</div>
+						<!--// 시장별 광고성(마케팅) 알림 레이어 툴팁 -->
+						<p class="tipTxt">스탬프팡과 해당 앱 중 하나만 변경해도 한꺼번에 변경됩니다.</p>
+						<ul>
+							<li>
+								<span>울산중앙전통시장</span>
+								<div class="setupSwitch">
+									<input type="checkbox" name="onoffswitch" class="switchChk" id="setup4" checked="checked" />
+									<label class="switchLabel" for="setup4">
+										<em class="switchLabelInner"></em>
+										<em class="switchBar"></em>
+									</label>
+								</div>
+							</li>
+							<li>
+								<span>신정시장</span>
+								<div class="setupSwitch">
+									<input type="checkbox" name="onoffswitch" class="switchChk" id="setup5" />
+									<label class="switchLabel" for="setup5">
+										<em class="switchLabelInner"></em>
+										<em class="switchBar"></em>
+									</label>
+								</div>
+							</li>
+							<li>
+								<span>덕하시장</span>
+								<div class="setupSwitch">
+									<input type="checkbox" name="onoffswitch" class="switchChk" id="setup6" />
+									<label class="switchLabel" for="setup6">
+										<em class="switchLabelInner"></em>
+										<em class="switchBar"></em>
+									</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<hr class="hrBk" />
+					<div class="group">
+						<h3>스탬프팡 광고성(마케팅) 알림</h3>
+						<p class="tipTxt">스탬프팡 광고성(이벤트) 푸시 및 SMS 수신여부에 대한 설정입니다.</p>
+						<ul>
+							<li>
+								<span>스탬프팡 광고성 알림</span>
+								<div class="setupSwitch">
+									<input type="checkbox" name="onoffswitch" class="switchChk" id="setup7" checked="checked" />
+									<label class="switchLabel" for="setup7">
+										<em class="switchLabelInner"></em>
+										<em class="switchBar"></em>
+									</label>
+								</div>
+							</li>
+							<li>
+								<span>SMS 수신 알림</span>
+								<div class="setupSwitch">
+									<input type="checkbox" name="onoffswitch" class="switchChk" id="setup8" />
+									<label class="switchLabel" for="setup8">
+										<em class="switchLabelInner"></em>
+										<em class="switchBar"></em>
+									</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+	</div>
+	<script type="text/javascript">
+		//상점별 광고성(마케팅) 알림 레이어 툴팁
+		$('.btnHelp').on('click', function(e) {
+			e.preventDefault();
+			var _this = $(this);
+			if (_this.hasClass('on')) {
+				_this.removeClass('on');
+				$( $(this).attr('href') ).slideUp();
+			} else {
+				_this.addClass('on');
+				$( $(this).attr('href') ).slideDown();
+			}
+		});
+		$('.btnTipClose').on('click', function(e) {
+			e.preventDefault();
+			var _this = $(this);
+			$('.btnHelp').removeClass('on');
+			$( $(this).attr('href') ).slideUp();
+		});
+	</script>
+</body>
+</html>

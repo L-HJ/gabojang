@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../static/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/base.css" />
+	<script src="../static/js/jquery-1.8.2.min.js"></script>
+	<script src="../static/js/jquery-ui.min.1.8.js"></script>
+	<script src="../static/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="../static/js/idangerous.swiper.js"></script>
+	<script src="../static/js/jquery.popupoverlay.js"></script>
+	<script src="../static/js/jquery.sticky.js"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents" class="subCnts">
+                <div class="termsAgree">
+                    <h3>이용약관 동의</h3>
+                    <span>원활한 서비스 제공을 위해 이용 약관 동의 내용에<br />동의해주세요.</span>
+                    <div class="agreeJoin">
+					<div class="allAgree">
+						<label class="chkBox1">
+							<input type="checkbox" name="allChk" value="" />
+							<span class="icon"></span>
+							<span class="text">아래 약관에 모두 동의합니다.</span>
+						</label>
+					</div>
+					<ul>
+						<li>
+							<label class="chkBox1">
+								<input type="checkbox" name="allChk" value="" />
+								<span class="icon"></span>
+								<span class="text">(필수) 위치기반 서비스 이용약관</span>
+                                <a href="https://pang.pt.koapp.com/terms_location" target="_blank" rel="noopener noreferrer" class="linkArr"></a>
+							</label>
+						</li>
+						<!-- <li>
+                            <label class="chkBox1">
+                                <input type="checkbox" name="allChk" value="" />
+                                <span class="icon"></span>
+                                <span class="text"><em>(선택)</em> 마케팅 정보 앱 푸시 알림 수신동의</span>
+                                <span class="tip">* 이벤트 및 혜택 정보를 받아보실 수 있어요. </p>
+                            </label>
+                        </li> 추후 노출 가능성이 있다고 하여 주석으로 처리하였습니다. 노출 할 경우 주석만 풀어주세요. (담당 : 조은비 주임) -->
+					</ul>
+					<div class="btnFixed">
+						<a href="#" class="btnTy2">확인</a>
+					</div>
+				</div>
+            </div>
+		</div>
+		<!--// 컨텐츠 -->
+	</div>
+    <script type="text/javascript">
+        //체크박스 선택
+        $(function() {
+            $('.allAgree [type=checkbox]').on('click', function() {
+                $('.termsAgree ul li [type=checkbox]').prop('checked', $(this).prop('checked'));
+                btnOnOff();
+            });
+
+            $('.termsAgree ul li [type=checkbox]').on('click', function () {
+                $('.allAgree [type=checkbox]').prop('checked', $('.termsAgree ul li [type=checkbox]:checked').length == 1);
+                /* $('.allAgree [type=checkbox]').prop('checked', $('.termsAgree ul li [type=checkbox]:checked').length == 2); 마케팅 선택 체크박스가 노출일 경우 length == 2 로 처리 */
+                btnOnOff();
+            });
+        });
+        
+        function btnOnOff() {
+            if($('.termsAgree ul li [type=checkbox]:first').prop('checked')) {
+                $('.termsAgree .btnTy2').addClass('on');
+            } else {
+                $('.termsAgree .btnTy2').removeClass('on');
+            }
+        }
+    </script>
+</body>
+</html>

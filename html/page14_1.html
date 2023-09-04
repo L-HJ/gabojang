@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../static/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/base.css" />
+	<script src="../static/js/jquery-1.8.2.min.js"></script>
+	<script src="../static/js/jquery-ui.min.1.8.js"></script>
+	<script src="../static/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="../static/js/idangerous.swiper.js"></script>
+	<script src="../static/js/jquery.popupoverlay.js"></script>
+	<script src="../static/js/jquery.sticky.js"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader2">
+			<div class="header">
+				<div class="btnList"><a href="./page03_1.html" class="txtHide">뒤로가기</a></div>
+				<h1>쿠폰</h1>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents">
+				<div class="comSch2">
+					<div class="tabUi2">
+						<ul>
+							<li><button class="on" data-conts="allCoupon">전체 쿠폰</button></li>
+							<li><button data-conts="couponEnd">사용완료/기간 만료</button></li>
+						</ul>
+					</div>
+					<div class="sch codeInput" id="sch">
+						<div class="inputSt1">
+							<input type="text" name="" value="" placeholder="쿠폰 코드를 입력해주세요." />
+							<div class="inputFocus"></div>
+						</div>
+						<a href="#" class="btnTy2">등록</a>
+					</div>
+				</div>
+				<div class="mycouponList">
+					<div class="tabSectoin on" id="allCoupon">
+						<hr class="hrBk" />
+						<h3>보유 쿠폰 <em>3</em>장</h3>
+						<div class="coupon">
+							<div class="section">
+								<div class="group front">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<h4>울산중앙전통시장 할인쿠폰</h4>
+									<strong class="price">3,000원</strong>
+									<p class="desc">
+										최소 주문 금액 : 10,000원시 정말 사용 가능
+										앱으로 결제 시 할인 진짜로 받을 수 있습니다있습니다.있습니다.있습니다.
+									</p>
+								</div>
+								<div class="group back">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<ul>
+										<li>- 결제조건 : 앱에서 결제시 사용 가능</li>
+										<li>- 최소주문금액 : 최소 10,000원 결제 시 사용 가능</li>
+										<li>- 사용조건 : 다른 쿠폰과 중복 사용하실 수 없습니다.</li>
+										<li>- 1인당 발급수량 : 10장</li>
+										<li>- 쿠폰 발급기간 : 22-04-11 ~ 22-12-31</li>
+										<li>- 쿠폰 유효기간 : 22-04-11 ~ 22-12-31</li>
+									</ul>
+								</div>
+								<a href="#" class="btnUse">쿠폰사용하기</a>
+							</div>
+						</div>
+						<div class="coupon">
+							<div class="section">
+								<div class="group front">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<h4>울산중앙전통시장 할인쿠폰</h4>
+									<strong class="price">5,000원</strong>
+									<p class="desc">
+										최소 주문 금액 : 10,000원<br />앱으로 결제 시 할인
+									</p>
+								</div>
+								<div class="group back">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<ul>
+										<li>- 결제조건 : 앱에서 결제시 사용 가능</li>
+										<li>- 최소주문금액 : 최소 10,000원 결제 시 사용 가능</li>
+										<li>- 사용조건 : 다른 쿠폰과 중복 사용하실 수 없습니다.</li>
+										<li>- 1인당 발급수량 : 10장</li>
+										<li>- 쿠폰 발급기간 : 22-04-11 ~ 22-12-31</li>
+										<li>- 쿠폰 유효기간 : 22-04-11 ~ 22-12-31</li>
+									</ul>
+								</div>
+								<a href="#" class="btnUse">쿠폰사용하기</a>
+							</div>
+						</div>
+						
+						<h3>발급 가능 쿠폰</h3>
+						<div class="coupon">
+							<div class="section">
+								<div class="group front">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<h4>울산중앙전통시장 할인쿠폰</h4>
+									<strong class="price">5,000원</strong>
+									<p class="desc">
+										최소 주문 금액 : 10,000원<br />앱으로 결제 시 할인
+									</p>
+									<span class="useCp">남은 쿠폰 수 : <em>10</em>/100</span>
+								</div>
+								<div class="group back">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<ul>
+										<li>- 결제조건 : 앱에서 결제시 사용 가능</li>
+										<li>- 최소주문금액 : 최소 10,000원 결제 시 사용 가능</li>
+										<li>- 사용조건 : 다른 쿠폰과 중복 사용하실 수 없습니다.</li>
+										<li>- 1인당 발급수량 : 10장</li>
+										<li>- 쿠폰 발급기간 : 22-04-11 ~ 22-12-31</li>
+										<li>- 쿠폰 유효기간 : 22-04-11 ~ 22-12-31</li>
+									</ul>
+								</div>
+								<a href="#" class="btnDown">쿠폰 다운로드</a>
+							</div>
+						</div>
+						<div class="coupon wrong">
+							<div class="section">
+								<div class="group front">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<h4>울산중앙전통시장 할인쿠폰</h4>
+									<strong class="price">5,000원</strong>
+									<p class="desc">
+										쿠폰 수량이 모두 소진되었습니다.
+									</p>
+								</div>
+								<div class="group back">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<ul>
+										<li>- 결제조건 : 앱에서 결제시 사용 가능</li>
+										<li>- 최소주문금액 : 최소 10,000원 결제 시 사용 가능</li>
+										<li>- 사용조건 : 다른 쿠폰과 중복 사용하실 수 없습니다.</li>
+										<li>- 1인당 발급수량 : 10장</li>
+										<li>- 쿠폰 발급기간 : 22-04-11 ~ 22-12-31</li>
+										<li>- 쿠폰 유효기간 : 22-04-11 ~ 22-12-31</li>
+									</ul>
+								</div>
+								<a href="#" class="btnDown">쿠폰 사용 불가</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="tabSectoin" id="couponEnd">
+						<div class="topNoti">
+							<p>최근 한 달 내에 만료된 쿠폰을 확인하실 수 있습니다.</p>
+						</div>
+						<div class="coupon wrong">
+							<div class="section">
+								<div class="group front">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<h4>울산중앙전통시장 할인쿠폰</h4>
+									<strong class="price">5,000원</strong>
+									<p class="desc">
+										사용 기간 만료
+									</p>
+								</div>
+								<div class="group back">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<ul>
+										<li>- 결제조건 : 앱에서 결제시 사용 가능</li>
+										<li>- 최소주문금액 : 최소 10,000원 결제 시 사용 가능</li>
+										<li>- 사용조건 : 다른 쿠폰과 중복 사용하실 수 없습니다.</li>
+										<li>- 1인당 발급수량 : 10장</li>
+										<li>- 쿠폰 발급기간 : 22-04-11 ~ 22-12-31</li>
+										<li>- 쿠폰 유효기간 : 22-04-11 ~ 22-12-31</li>
+									</ul>
+								</div>
+								<a href="#" class="btnDown">쿠폰 사용 불가</a>
+							</div>
+						</div>
+						<div class="coupon wrong">
+							<div class="section">
+								<div class="group front">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<h4>울산중앙전통시장 할인쿠폰</h4>
+									<strong class="price">5,000원</strong>
+									<p class="desc">
+										사용 완료
+									</p>
+								</div>
+								<div class="group back">
+									<div class="date">
+										<span>~ 2022.05.11 까지</span>
+									</div>
+									<ul>
+										<li>- 결제조건 : 앱에서 결제시 사용 가능</li>
+										<li>- 최소주문금액 : 최소 10,000원 결제 시 사용 가능</li>
+										<li>- 사용조건 : 다른 쿠폰과 중복 사용하실 수 없습니다.</li>
+										<li>- 1인당 발급수량 : 10장</li>
+										<li>- 쿠폰 발급기간 : 22-04-11 ~ 22-12-31</li>
+										<li>- 쿠폰 유효기간 : 22-04-11 ~ 22-12-31</li>
+									</ul>
+								</div>
+								<a href="#" class="btnDown">쿠폰 사용 불가</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+	</div>
+
+	<script type="text/javascript">
+		//카드 뒤집기
+		 $('.section .group').click(function() {
+		   var _section = $(this).parent();
+		   if ( _section.hasClass('active') ) {
+			  _section.removeClass('active');
+			  _section.find('.front').fadeIn();
+			  _section.find('.back').hide();
+		   } else {
+			  _section.addClass('active');
+			  _section.find('.front').hide();
+			  _section.find('.back').fadeIn();
+		   }
+		});
+
+		//쿠폰코드입력 input blur 이벤트
+		$('.codeInput input').keyup(function() {
+			var _text = '';
+			$.each($('.codeInput input'), function() {
+				if($(this).val()) {
+					_text += '1';
+				}
+			});
+			if(_text.length == $('.codeInput input').length) {
+				$('.codeInput .btnTy2').addClass('on');
+			} else {
+				$('.codeInput .btnTy2').removeClass('on');
+			}
+		});
+		
+		//쿠폰 탭
+		var tabLinks = $(".tabUi2 ul li button");
+		var tabContent = $(".tabSectoin");
+
+		$.each(tabLinks, function (idx) {
+			$(this).on('click', openTabs);
+			if(idx === 0) {
+				$(this).click();
+			}
+		});
+
+		function openTabs(el) {
+			var btnTarget = $(this);
+			var conts = btnTarget.data('conts');
+			btnTarget.addClass('on').parent().siblings().find('button').removeClass('on');
+			$("#" + conts).show().stop().animate({'margin-left': 0, opacity: 1}, 500);
+			$.each(tabContent, function() {
+				if($(this).attr('id') !== conts) {
+					$(this).stop().animate({'margin-left': 30, opacity: 0, display:'none'}, 0).hide();
+				}
+			});
+			//전체쿠폰, 사용완료/기간 만료 검색 영역 show, hide
+			if(conts == 'couponEnd') {
+				$(".comSch2 .sch").hide();
+			} else {
+				$(".comSch2 .sch").show();
+			}
+		}
+	</script>
+</body>
+</html>

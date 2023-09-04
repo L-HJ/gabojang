@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../static/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/base.css" />
+	<script src="../static/js/jquery-1.8.2.min.js"></script>
+	<script src="../static/js/jquery-ui.min.1.8.js"></script>
+	<script src="../static/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="../static/js/idangerous.swiper.js"></script>
+	<script src="../static/js/jquery.popupoverlay.js"></script>
+	<script src="../static/js/jquery.sticky.js"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader2">
+			<div class="header">
+				<h1>주문내역</h1>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents" class="subCnts3">
+				<div class="orderSection">
+					<div class="myOrderState">
+						<div class="myOrderList">
+							<ul>
+								<li class="orderState">
+									<div class="box">
+										<div class="img"><img src="../static/img/tumb/img05.jpg" alt="" /></div>
+										<div class="cnt">
+											<div class="state">
+												<span>21-09-25</span>
+											</div>
+											<p>울산중앙전통시장</p>
+											<span class="menu">[순이네 맛있는 반찬][순이네 맛있는 반찬][순이네 맛있는 반찬][순이네 맛있는 반찬]</span>
+											<a href="javascript:;" class="txtHide btnEtc">기타</a>
+											<div class="layerEtc">
+                                                <!-- 22.07.01 이현진 수정 -->
+												<a href="../../order/html/main00_2.html">시장보기</a>
+                                                <!-- // 22.07.01 이현진 수정 -->
+												<a href="javascript:;" class="layerAlertCom_open">주문내역 삭제</a>
+											</div>
+										</div>
+									</div>
+									<div class="btnsTwice">
+										<span><a href="javascript:;" class="btnTy5 layerOrderDetail_open">주문 상세</a></span> <!-- 22.06.30 이현진 수정 -->
+										<span><a href="#" class="btnTy5">수취 확인</a></span>
+									</div>
+									<div class="deliveryState state1">
+										<p>오후 18:42 <strong>배달완료</strong> 예정</p>
+										<ul>
+											<li class="past"><span>주문완료</span></li>
+											<li class="past"><span>입고준비</span></li>
+											<li class="ing"><span>배달중</span></li>
+											<li><span>배달완료</span></li>
+										</ul>
+									</div>
+								</li>
+								<li class="orderState">
+									<div class="box">
+										<div class="img"><img src="../static/img/tumb/img05.jpg" alt="" /></div>
+										<div class="cnt">
+											<div class="state">
+												<span>21-09-25</span>
+											</div>
+											<p>울산중앙전통시장</p>
+											<span class="menu">[순이네 맛있는 반찬][순이네 맛있는 반찬][순이네 맛있는 반찬][순이네 맛있는 반찬]</span>
+											<a href="javascript:;" class="txtHide btnEtc">기타</a>
+											<div class="layerEtc">
+												<!-- 22.07.01 이현진 수정 -->
+												<a href="../../order/html/main00_2.html">시장보기</a>
+                                                <!-- // 22.07.01 이현진 수정 -->
+												<a href="javascript:;" class="layerAlertCom_open">주문내역 삭제</a>
+											</div>
+										</div>
+									</div>
+									<div class="btnsTwice">
+										<span><a href="javascript:;" class="btnTy5 layerOrderDetail_open">주문 상세</a></span> <!-- 22.06.30 이현진 수정 -->
+										<span><a href="#" class="btnTy7">주문 취소</a></span>
+									</div>
+									<div class="deliveryState state1">
+										<p>오후 18:42 <strong>배달완료</strong> 예정</p>
+										<ul>
+											<li class="ing"><span>주문완료</span></li>
+											<li><span>입고준비</span></li>
+											<li><span>배달중</span></li>
+											<li><span>배달완료</span></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<div class="img"><img src="../static/img/tumb/img05.jpg" alt="" /></div>
+										<div class="cnt">
+											<div class="state">
+												<span>21-09-25</span>
+												<span class="now cancle">취소완료</span>
+											</div>
+											<p>울산 사랑시장</p>
+											<span class="menu">얼큰이 순대국 외 2개</span>
+											<a href="javascript:;" class="txtHide btnEtc">기타</a>
+											<div class="layerEtc">
+												<!-- 22.07.01 이현진 수정 -->
+												<a href="../../order/html/main00_2.html">시장보기</a>
+                                                <!-- // 22.07.01 이현진 수정 -->
+												<a href="javascript:;" class="layerAlertCom_open">주문내역 삭제</a>
+											</div>
+										</div>
+									</div>
+									<div class="btnsTwice">
+										<span><a href="javascript:;" class="btnTy5 layerOrderDetail_open">주문 상세</a></span> <!-- 22.06.30 이현진 수정 -->
+										<!-- 22.06.30 이현진 미노출 -->
+										<!-- <span><a href="#" class="btnTy6">리뷰 쓰기</a></span> -->
+                                        <!-- // 22.06.30 이현진 미노출 -->
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<div class="img"><img src="../static/img/tumb/img05.jpg" alt="" /></div>
+										<div class="cnt">
+											<div class="state">
+												<span>21-09-25</span>
+												<span class="now">배달완료</span>
+											</div>
+											<p>울산 사랑시장</p>
+											<span class="menu">얼큰이 순대국 외 2개</span>
+											<a href="javascript:;" class="txtHide btnEtc">기타</a>
+											<div class="layerEtc">
+												<!-- 22.07.01 이현진 수정 -->
+												<a href="../../order/html/main00_2.html">시장보기</a>
+                                                <!-- // 22.07.01 이현진 수정 -->
+												<a href="javascript:;" class="layerAlertCom_open">주문내역 삭제</a>
+											</div>
+										</div>
+									</div>
+									<div class="btnsTwice">
+										<span><a href="javascript:;" class="btnTy5 layerOrderDetail_open">주문 상세</a></span> <!-- 22.06.30 이현진 수정 -->
+										<!-- 22.06.30 이현진 미노출 -->
+										<!-- <span><a href="#" class="btnTy6">리뷰 쓰기</a></span> -->
+                                        <!-- // 22.06.30 이현진 미노출 -->
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<div class="img"><img src="../static/img/tumb/img05.jpg" alt="" /></div>
+										<div class="cnt">
+											<div class="state">
+												<span>21-09-25</span>
+												<span class="now">배달완료</span>
+											</div>
+											<p>울산 사랑시장</p>
+											<span class="menu">얼큰이 순대국 외 2개</span>
+											<a href="javascript:;" class="txtHide btnEtc">기타</a>
+											<div class="layerEtc">
+												<!-- 22.07.01 이현진 수정 -->
+												<a href="../../order/html/main00_2.html">시장보기</a>
+                                                <!-- // 22.07.01 이현진 수정 -->
+												<a href="javascript:;" class="layerAlertCom_open">주문내역 삭제</a>
+											</div>
+										</div>
+									</div>
+									<div class="btnsTwice">
+										<span><a href="javascript:;" class="btnTy5 layerOrderDetail_open">주문 상세</a></span> <!-- 22.06.30 이현진 수정 -->
+										<!-- 22.06.30 이현진 미노출 -->
+										<!-- <span><a href="#" class="btnTy6">리뷰 쓰기</a></span> -->
+                                        <!-- // 22.06.30 이현진 미노출 -->
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<div class="img"><img src="../static/img/tumb/img05.jpg" alt="" /></div>
+										<div class="cnt">
+											<div class="state">
+												<span>21-09-25</span>
+												<span class="now">배달완료</span>
+											</div>
+											<p>울산 사랑시장</p>
+											<span class="menu">얼큰이 순대국 외 2개</span>
+											<a href="javascript:;" class="txtHide btnEtc">기타</a>
+											<div class="layerEtc">
+												<!-- 22.07.01 이현진 수정 -->
+												<a href="../../order/html/main00_2.html">시장보기</a>
+                                                <!-- // 22.07.01 이현진 수정 -->
+												<a href="javascript:;" class="layerAlertCom_open">주문내역 삭제</a>
+											</div>
+										</div>
+									</div>
+									<div class="btnsTwice">
+										<span><a href="javascript:;" class="btnTy5 layerOrderDetail_open">주문 상세</a></span> <!-- 22.06.30 이현진 수정 -->
+                                        <!-- 22.06.30 이현진 미노출 -->
+										<!-- <span><a href="#" class="btnTy6">리뷰 쓰기</a></span> -->
+                                        <!-- // 22.06.30 이현진 미노출 -->
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+
+		<!-- 하단 고정 바 -->
+		<nav class="tabBar">
+			<a href="./main00_1.html" class="txtHide btnHome">홈</a>
+			<ul>
+				<li><a href="./page11_1.html"><span>시장보기</span></a></li>
+				<li class="active"><a href="./page10_1.html"><span>주문내역</span><em class="num">3</em></a></li>
+				<li></li>
+				<li><a href="./page12_1.html"><span>찜</span></a></li>
+				<li><a href="./page03_1.html"><span>마이페이지</span></a></li>
+			</ul>
+		</nav>
+		<!--// 하단 고정 바 -->
+	</div>
+    
+    <!-- 22.06.30 이현진 추가 -->
+    <!-- 주문상세 레이어 -->
+	<div id="layerOrderDetail">
+		<div class="layerBox">
+			<div class="layerHd">
+				<a href="../../order/html/page05_1.html" class="btnReOrder">재주문</a>
+				<h3>주문상세</h3>
+			</div>
+			<div class="layerCnt">
+				<div class="orderDetailView">
+					<div class="section">
+						<dl class="nameDate">
+							<dt>울산중앙전통시장</dt>
+							<dd>2021-10-12 13:12</dd>
+						</dl>
+						<div class="group1">
+							<ul>
+								<li>
+									<dl>
+										<dt>스페셜 물회(대)</dt>
+										<dd>37,000원</dd>
+									</dl>			
+								</li>
+								<li>
+									<dl>
+										<dt>연어회(2인분) X 2</dt>
+										<dd>17,000원</dd>
+									</dl>
+								</li>
+								<li class="cancle">
+									<dl>
+										<dt>스페셜 물회(대)</dt>
+										<dd>37,000원</dd>
+									</dl>				
+								</li>
+								<li class="cancle">
+									<dl>
+										<dt>스페셜 물회(대)</dt>
+										<dd>37,000원</dd>
+									</dl>				
+								</li>
+							</ul>
+						</div>
+						<div class="group2">
+							<ul>
+								<li>
+									<dl>
+										<dt>주문금액</dt>
+										<dd>69,500원</dd>
+									</dl>
+								</li>
+								<li>
+									<dl>
+										<dt>배달금액</dt>
+										<dd>+ 2,500원</dd>
+									</dl>
+								</li>
+								<li>
+									<dl>
+										<dt>쿠폰 할인</dt>
+										<dd>- 5,000원</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+						<div class="group3">
+							<ul>
+								<li>
+									<dl>
+										<dt>총 결제금액</dt>
+										<dd>67,000원</dd>
+									</dl>
+								</li>
+								<li>
+									<dl>
+										<dt>결제수단</dt>
+										<dd>신용/체크카드</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<hr class="hrBk" />
+					<div class="section">
+						<div class="group4">
+							<h4>매장 요청사항</h4>
+							<p>
+								물회 맛있게 부탁드립니다ㅎㅎ 싱싱한 해산
+								물들로 부탁드려요. 연어회도 맛있게 부탁드립니다.
+							<p>
+						</div>
+						<div class="group4">
+							<h4>배달 요청사항</h4>
+							<p>
+								문앞에 두고 벨 눌러주세요.
+							</p>
+						</div>
+						<div class="group4">
+							<h4>배달주소</h4>
+							<p>
+								사천진리 86-64<br />
+								(도로명) 강원 강릉시 사천면 진리항구길 51
+							</p>
+						</div>
+						<div class="group4">
+							<h4>수령인 전화번호</h4>
+							<p>
+								010-1234-5678
+							</p>
+						</div>
+						<div class="group4">
+							<h4>시장정보</h4>
+							<dl>
+								<dt>시장주소</dt>
+								<dd><span>울산 중구 번영로 329 센트럴프라자 4층</span></dd>
+							</dl>
+							<dl>
+								<dt>전화번호</dt>
+								<dd><span>052-1234-5678</span></dd>
+							</dl>
+						</div>
+						<div class="group4">
+							<h4>취소사유</h4>
+							<p>
+								메뉴품절
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="javascript:;" class="txtHide btnLayerClose1 layerOrderDetail_close">닫기</a>
+		</div>
+	</div>
+	<!--// 주문상세 레이어 -->
+    <!-- // 22.06.30 이현진 추가 -->
+
+	<!-- 주문내역 삭제 레이어 -->
+	<div class="layerAlertCom" id="layerAlertCom">
+		<div class="layerBox">
+			<div class="layerCnt">
+				<div class="layerAlert">
+					<p>선택한 주문내역을<br />삭제하시겠습니까?<span class="txtSub1">삭제 후에는 복구할 수 없습니다.</span></p>
+					<div class="btnRight">
+						<a href="javascript:;" class="btnAlert2 layerAlertCom_close">취소</a>
+						<a href="#" class="btnAlert1">확인</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--// 주문내역 삭제 레이어 -->
+    
+
+	<script type="text/javascript">
+        commonPop('#layerOrderDetail'); //주문상세 레이어
+		commonPop('#layerAlertCom'); //주문내역 삭제 레이어 22.06.30 이현진 추가
+        
+
+		//기타버튼 레이어 show,hide
+		$('.btnEtc').on('click', function(e) {
+			e.preventDefault();
+			var _this = $(this);
+			if ( _this.hasClass('on') ) {
+				_this.removeClass('on').next().slideUp();
+			} else {
+				_this.addClass('on').next().slideDown();
+			}
+		});
+
+		//탭바
+		$('.tabBar ul li a').on('click', function (e) {
+			//e.preventDefault(); 22.06.30 이현진 수정
+			var _li = $(this).parent();
+			_li.addClass('active').siblings().removeClass('active');
+		});
+	</script>
+</body>
+</html>
