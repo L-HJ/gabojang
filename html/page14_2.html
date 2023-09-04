@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../static/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/base.css" />
+	<script src="../static/js/jquery-1.8.2.min.js"></script>
+	<script src="../static/js/jquery-ui.min.1.8.js"></script>
+	<script src="../static/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="../static/js/idangerous.swiper.js"></script>
+	<script src="../static/js/jquery.popupoverlay.js"></script>
+	<script src="../static/js/jquery.sticky.js"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader2">
+			<div class="header">
+				<div class="btnList"><a href="#" class="txtHide">뒤로가기</a></div>
+				<h1>쿠폰</h1>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents">
+				<div class="comSch2">
+					<div class="tabUi2">
+						<ul>
+							<li><button class="on" data-conts="allCoupon">전체 쿠폰</button></li>
+							<li><button data-conts="couponEnd">사용완료/기간 만료</button></li>
+						</ul>
+					</div>
+					<div class="sch codeInput" id="sch">
+						<div class="inputSt1">
+							<input type="text" name="" value="" placeholder="쿠폰 코드를 입력해주세요." />
+							<div class="inputFocus"></div>
+						</div>
+						<a href="#" class="btnTy2">등록</a>
+					</div>
+				</div>
+				<div class="mycouponList">
+					<div class="tabSectoin on" id="allCoupon">
+						<hr class="hrBk" />
+						<h3>보유 쿠폰 <em>0</em>장</h3>
+						<div class="coupon">
+							<div class="noData">
+								<p>사용 가능한 쿠폰이 없습니다.</p>
+							</div>
+						</div>
+						
+						<h3>발급 가능 쿠폰</h3>
+						<div class="coupon">
+							<div class="noData">
+								<p>사용 가능한 쿠폰이 없습니다.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="tabSectoin" id="couponEnd">
+						<div class="topNoti">
+							<p>최근 한 달 내에 만료된 쿠폰을 확인하실 수 있습니다.</p>
+						</div>
+						<div class="coupon wrong">
+							<div class="noData">
+								<p>사용완료 / 기간 만료된 쿠폰이 없습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+	</div>
+
+	<script type="text/javascript">
+		//카드 뒤집기
+		$('.section .group').click(function() {
+			if ( $('.section').hasClass('active') ) {
+				$('.section').removeClass('active');
+				$('.group.front').fadeIn();
+				$('.group.back').hide();
+			} else {
+				$('.section').addClass('active');
+				$('.group.front').hide();
+				$('.group.back').fadeIn();
+			}
+		});
+
+		//쿠폰코드입력 input blur 이벤트
+		$('.codeInput input').keyup(function() {
+			var _text = '';
+			$.each($('.codeInput input'), function() {
+				if($(this).val()) {
+					_text += '1';
+				}
+			});
+			if(_text.length == $('.codeInput input').length) {
+				$('.codeInput .btnTy2').addClass('on');
+			} else {
+				$('.codeInput .btnTy2').removeClass('on');
+			}
+		});
+		
+		//쿠폰 탭
+		var tabLinks = $(".tabUi2 ul li button");
+		var tabContent = $(".tabSectoin");
+
+		$.each(tabLinks, function (idx) {
+			$(this).on('click', openTabs);
+			if(idx === 0) {
+				$(this).click();
+			}
+		});
+
+		function openTabs(el) {
+			var btnTarget = $(this);
+			var conts = btnTarget.data('conts');
+			btnTarget.addClass('on').parent().siblings().find('button').removeClass('on');
+			$("#" + conts).show().stop().animate({'margin-left': 0, opacity: 1}, 500);
+			$.each(tabContent, function() {
+				if($(this).attr('id') !== conts) {
+					$(this).stop().animate({'margin-left': 30, opacity: 0, display:'none'}, 0).hide();
+				}
+			});
+			//전체쿠폰, 사용완료/기간 만료 검색 영역 show, hide
+			if(conts == 'couponEnd') {
+				$(".comSch2 .sch").hide();
+			} else {
+				$(".comSch2 .sch").show();
+			}
+		}
+	</script>
+</body>
+</html>

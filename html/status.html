@@ -1,0 +1,740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset= utf-8" />
+	<title>울산시장앱 워크시트</title>
+	<style type="text/css">
+		* {	margin:0;padding:0;}
+		body {padding:20px;	font-family:Tahoma, Sans-Serif; color:#333; font-size:11px; background-color:#fff;}
+		/* title */
+		h1 {color:#000; letter-spacing:-2px;}
+		.currentsite {display:block; position:absolute; right:40px; top:20px;}
+		#mwork fieldset {border:none;}
+		#mwork legend {display:none;}
+		#mwork h3 {}
+		#mwork h4 {}
+		#mwork h5 {}
+		#mwork h6 {}
+		/* table */
+		#mwork {padding-top:30px;}
+		#mwork table {width:100%; border-collapse:collapse; border:1px solid #666;}
+		#mwork caption {text-align:left; font-size:200%; color:#999;}
+		#mwork .index td {background:#ccc;}
+		#mwork .indexred td {background:#fdd;}
+		#mwork .indexgreen td {background:#dfd;}
+		#mwork .indexblue td {background:#ddf;}
+		#mwork .indexyellow td {background:#fff1c7;}
+		#mwork .line td {border-top:3px solid #666;}
+		#mwork .line2 td {border-top:2px solid #666;}
+		#mwork th {padding:6px; border:1px solid #666; color:#ccc; font-size:110%; background-color:#000;}
+		#mwork td {padding:4px; padding-left:10px; border:1px solid #666; background-color:#eee;}
+		#mwork td.type,
+		#mwork .filename {padding-left:0; text-align:center;}
+		#mwork .depth1 {}
+		#mwork .depth2 {}
+		#mwork .depth3 {}
+		#mwork .depth4 {}
+		#mwork .memo {color:#000;}
+		/* task */
+		#mwork .done {padding:0; font-weight:bold;	text-align:center; color:#090;}
+		#mwork .undone {padding:0; font-weight:bold; text-align:center; color:#900;}
+		#mwork .finish {padding:0; font-weight:bold; text-align:center; color:#000;}
+		#mwork .task {}
+		#mwork .start {}
+		/* effect */
+		#mwork a,
+		#mwork a:link, #mwork a:visited {color:#009; text-decoration:none;}
+		#mwork a:hover, #mwork a:active {color:#00f; text-decoration:underline;}
+		#mwork td:hover {background-color:#ddd;}
+		/* memo */
+		#mwork del {color:#900;}
+		#mwork .add {color:#900; font-size:18px; font-weight:bold;}
+		/* note */
+		#note {margin:10px 0 10px 0; padding:10px; border:2px dotted #000; background:#eee; letter-spacing:0;}
+		#note p {padding-left:10px;}
+		#note pre {margin-top:10px; margin-bottom:10px; font-family:Tahoma, Sans-Serif; color:#333; font-size:small;}
+		#note h1 {}
+		#note h2 {margin:0px 0 10px 0;}
+		#note .notice{color:red;}
+		#note .comment {display:block; margin:5px 0 10px 0; color:#666;}
+		#note .issue {color:#900;}
+		#note .add {color:#900; font-weight:bold;}
+		#note ul li {margin-left:20px;}
+		td em {color:#f00; font-style:normal;}
+		td strong {color:red; font-weight:bold;}
+        td.modify {font-size:11px; color:#333; padding:0 !important; text-align:center;}
+		tr.orange td{background-color:#FFE4CA !important;}
+		tr.purple td{background-color:#F1E6FF !important;}
+		tr.green td{background-color:#DEEED5 !important;}
+		tr.yellow td{background-color:#FCFBDC !important;}
+		tr.blue td{background-color:#E1F5FD !important;}
+		tr.red td{background-color:#FFE6E7 !important;}
+		tr.white td{background-color:#FFF !important;}
+		tr.brown td{background-color:#E6DCD2 !important;}
+		.redfont {color:#f00 !important;}
+		.modify {margin-top:5px; padding:5px; border:1px dotted #000; font-size:13px; background-color:#ccc;}
+		.modify h2 {margin-bottom:3px;}
+	</style>
+	<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+	<script type="text/javascript">
+		(function ($) {
+			$.fn.start = function (options) {
+				var settings = $.extend({
+						title: 'h2.title',
+						content: '#mwork',
+						files: 'tbody tr',
+						start: 'td.modify',
+						index: 0,
+						openAll: false,
+						speed: 'fast'
+					}, options),
+					all_sections = this,
+					header = $('div.header');
+				return this.each(function () {
+					var self = this,
+						$self = $(self),
+						title_text = [],
+						completed = 0;
+					self.section_title = $(settings.title, $self);
+					self.content = $(settings.content, $self);
+					self.files = $(settings.files, $self);
+					self.files.each(function () {
+						var start = $(settings.start, this);
+						start.each(function () {
+							var text = $(this).text();
+							if (text) {
+								completed++;
+							}
+						});
+					});
+					self.files
+						.bind('mouseenter', function () {
+							$(this).addClass('hover');
+						})
+						.bind('mouseleave', function () {
+							$(this).removeClass('hover');
+						});
+					title_text = [self.section_title.text(), '<span class="page-count">(', completed, '/', self.files.length, ')</span>'];
+					self.section_title.html(title_text.join(''));
+					self.section_title.bind('click', function () {
+						self.content.slideToggle(settings.speed);
+					});
+					if (settings.openAll || ((settings.index - 1) === all_sections.index(this))) {
+						self.content.css('display', 'block');
+					}
+				});
+			};
+			$(document).ready(function () {
+				$('#mwork').start({ openAll: true });
+				$('#total').text($('tbody tr').length);
+				$('tbody tr:even').addClass('even');
+				$('tbody td[rowspan][rowspan!=1]').addClass('multi');
+			});
+		}(jQuery));
+	</script>
+</head>
+
+<body>
+	<script type="text/javascript">document.body.className += ' js';</script>
+	<h1>울산시장앱 Publishing Work Sheet</h1>
+	<div id="mwork">
+		<h2 class="title">울산시장앱</h2>
+		<fieldset>
+		<table class="mwork" summary="WebPublisher Procedure Sheet" border="1">
+			<caption>Publishing ProcedureSheet</caption>
+			<colgroup>
+			<col width="15%" />
+			<col width="15%" />
+			<col width="18%" />
+			<col width="15%" />
+			<col width="8%" />
+			<col width="8%" />
+			<col width="*" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>메뉴명1</th>
+					<th>메뉴명2</th>
+					<th>메뉴명3</th>
+					<th>FileName/Link</th>
+					<th>담당자</th>
+					<th>상태</th>
+					<th>Memo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="white">
+					<td class="depth1" rowspan="3">메인</td>
+					<td class="depth2">기본</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./main00_1.html">main00_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth2">기본_장바구니 담기</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./main00_2.html">main00_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth2">메인 불가</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./main00_3.html">main00_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth1" rowspan="7">내주소 설정</td>
+					<td class="depth2">내주소 설정</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page00_1.html">page00_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth2">주소검색</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page00_2.html">page00_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth2" rowspan="5">위치지정</td>
+					<td class="depth3">주소입력 전</td>
+					<td class="filename"><a target="_blank" href="./page00_3.html">page00_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth3">주소입력 후</td>
+					<td class="filename"><a target="_blank" href="./page00_4.html">page00_4.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth3">위치이동 중(지번x)</td>
+					<td class="filename"><a target="_blank" href="./page00_5.html">page00_5.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth3">위치이동 중</td>
+					<td class="filename"><a target="_blank" href="./page00_6.html">page00_6.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth3">[레이어] 도로명 주소 없음</td>
+					<td class="filename"><a target="_blank" href="./page00_7.html">page00_7.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth1" rowspan="12">로그인</td>
+					<td class="depth2">이메일/휴대폰(인증번호 발송 전)</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_1.html">page01_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">이메일/휴대폰(인증번호 발송 후)</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_2.html">page01_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 가입된 계정 없음</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_3.html">page01_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 비밀번호 틀림</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_4.html">page01_4.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 가입된 휴대폰 번호 아님</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_5.html">page01_5.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 가입된 이메일 아님</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_6.html">page01_6.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 인증번호 전송 발송 성공</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_7.html">page01_7.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 아이디 찾기 결과 안내</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_8.html">page01_8.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 비밀번호 찾기 결과 안내</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_9.html">page01_9.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 휴대폰 형식 틀림</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_10.html">page01_10.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 인증번호 틀림</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_11.html">page01_11.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr>
+					<td class="depth2">[레이어] 휴대폰 번호 형식 틀림</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page01_12.html">page01_12.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth1" rowspan="2">회원가입</td>
+					<td class="depth2">약관동의</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page02_1.html">page02_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth2">회원가입</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page02_2.html">page02_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="orange">
+					<td class="depth1" rowspan="3">마이페이지</td>
+					<td class="depth2">로그인 후</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page03_1.html">page03_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="orange">
+					<td class="depth2">로그인 전</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page03_2.html">page03_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="orange">
+					<td class="depth2">제공 서비스별 약관</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page03_3.html">page03_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="yellow">
+					<td class="depth1">알림설정</td>
+					<td class="depth2"></td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page04_1.html">page04_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="green">
+					<td class="depth1" rowspan="2">정보수정</td>
+					<td class="depth2">정보수정</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page05_1.html">page05_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="green">
+					<td class="depth2">[레이어] 비밀번호 틀림</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page05_2.html">page05_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="blue">
+					<td class="depth1" rowspan="2">알림내역</td>
+					<td class="depth2">목록</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page06_1.html">page06_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="blue">
+					<td class="depth2">상세</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page06_2.html">page06_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="brown">
+					<td class="depth1" rowspan="3">공지사항</td>
+					<td class="depth2">목록</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page07_1.html">page07_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="brown">
+					<td class="depth2">상세</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page07_2.html">page07_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="brown">
+					<td class="depth2">상세_이미지</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page07_3.html">page07_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth1" rowspan="8">문의하기</td>
+					<td class="depth2" rowspan="8">FAQ/1:1 문의</td>
+					<td class="depth3">목록</td>
+					<td class="filename"><a target="_blank" href="./page08_1.html">page08_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth3">목록 결과 없음</td>
+					<td class="filename"><a target="_blank" href="./page08_2.html">page08_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth3">FAQ 상세</td>
+					<td class="filename"><a target="_blank" href="./page08_3.html">page08_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth3">1:1 문의 상세</td>
+					<td class="filename"><a target="_blank" href="./page08_4.html">page08_4.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth3">1:1 문의(비로그인)</td>
+					<td class="filename"><a target="_blank" href="./page08_5.html">page08_5.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth3">1:1 문의 쓰기</td>
+					<td class="filename"><a target="_blank" href="./page08_6.html">page08_6.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth3">[레이어] 문의하기 실패</td>
+					<td class="filename"><a target="_blank" href="./page08_7.html">page08_7.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="purple">
+					<td class="depth3">[레이어] 문의하기 성공</td>
+					<td class="filename"><a target="_blank" href="./page08_8.html">page08_8.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth1" rowspan="2">장바구니</td>
+					<td class="depth2">장바구니</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page09_1.html">page09_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth2">상품 없음</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page09_2.html">page09_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth1" rowspan="4">주문내역</td>
+					<td class="depth2">주문내역</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page10_1.html">page10_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth2">주문내역 결과 없음</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page10_2.html">page10_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth2">[레이어] 주문 상세 내역</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page10_3.html">page10_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth2">[레이어] 상품별 리뷰 쓰기</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page10_4.html">page10_4.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="orange">
+					<td class="depth1">시장보기</td>
+					<td class="depth2"></td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page11_1.html">page11_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="yellow">
+					<td class="depth1" rowspan="4">찜</td>
+					<td class="depth2">장바구니 담기 전</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page12_1.html">page12_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="yellow">
+					<td class="depth2">장바구니 담기 후</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page12_2.html">page12_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="yellow">
+					<td class="depth2">찜한 상점 없음</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page12_3.html">page12_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="yellow">
+					<td class="depth2">[레이어] 찜한 상품 전체 삭제</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page12_4.html">page12_4.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="green">
+					<td class="depth1" rowspan="2">리뷰목록</td>
+					<td class="depth2">목록</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page13_1.html">page13_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="green">
+					<td class="depth2">결과없음</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page13_2.html">page13_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="blue">
+					<td class="depth1" rowspan="4">쿠폰</td>
+					<td class="depth2">전체쿠폰/사용완료,만료</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page14_1.html">page14_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="blue">
+					<td class="depth2">전체쿠폰/사용완료,만료 결과없음</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page14_2.html">page14_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="blue">
+					<td class="depth2">[레이어] 발급성공</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page14_3.html">page14_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="blue">
+					<td class="depth2">[레이어] 발급실패</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page14_4.html">page14_4.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="brown">
+					<td class="depth1" rowspan="3">검색</td>
+					<td class="depth2">검색</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page15_1.html">page15_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="brown">
+					<td class="depth2">검색 결과</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page15_2.html">page15_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="brown">
+					<td class="depth2">검색 결과 없음</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page15_3.html">page15_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="white">
+					<td class="depth1">이벤트 목록</td>
+					<td class="depth2"></td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page16_1.html">page16_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth1" rowspan="3">약관동의</td>
+					<td class="depth2">이용약관동의</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page17_1.html">page17_1.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth2">[레이어] 마케팅 수신동의</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page17_2.html">page17_2.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+				<tr class="red">
+					<td class="depth2">[레이어] 마케팅 수신거부</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./page17_3.html">page17_3.html</a></td>
+					<td class="finish">이상아</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+                <tr class="purple">
+					<td class="depth1" rowspan="3">약관 내용</td>
+					<td class="depth2">통합회원약관 </td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./terms.html">terms.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+                <tr class="purple">
+					<td class="depth2">서비스 이용약관</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./terms_use.html">terms_use.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+                <tr class="purple">
+					<td class="depth2">개인정보 처리방침</td>
+					<td class="depth3"></td>
+					<td class="filename"><a target="_blank" href="./terms_info.html">terms_info.html</a></td>
+					<td class="finish">이현진</td>
+					<td class="modify">완료</td>
+					<td class="memo"></td>
+				</tr>
+			</tbody>
+		</table>
+		</fieldset>
+	</div>
+</body>
+</html>

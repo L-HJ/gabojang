@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>울산시장앱</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="../static/css/normalize.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/jquery-ui.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/idangerous.swiper.css" />
+	<link type="text/css" rel="stylesheet" href="../static/css/base.css" />
+	<script src="../static/js/jquery-1.8.2.min.js"></script>
+	<script src="../static/js/jquery-ui.min.1.8.js"></script>
+	<script src="../static/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="../static/js/idangerous.swiper.js"></script>
+	<script src="../static/js/jquery.popupoverlay.js"></script>
+	<script src="../static/js/jquery.sticky.js"></script>
+	<script src="../static/js/common.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 상단 -->
+		<div id="header" class="subHeader2">
+			<div class="header">
+				<h1>주문내역</h1>
+			</div>
+		</div>
+		<!--// 상단 -->
+
+		<!-- 컨텐츠 -->
+		<div id="container">
+			<div id="contents" class="subCnts3">
+				<div class="orderSection">
+					<div class="myOrderState">
+						<div class="myOrderList">
+							<ul>
+								<li class="noData">
+									<p>주문내역이 없습니다.</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// 컨텐츠 -->
+
+		<!-- 하단 고정 바 -->
+		<nav class="tabBar">
+			<a href="#" class="txtHide btnHome">홈</a>
+			<ul>
+				<li><a href="#"><span>시장보기</span></a></li>
+				<li class="active"><a href="#"><span>주문내역</span><em class="num">3</em></a></li>
+				<li></li>
+				<li><a href="#"><span>찜</span></a></li>
+				<li><a href="#"><span>마이페이지</span></a></li>
+			</ul>
+		</nav>
+		<!--// 하단 고정 바 -->
+	</div>
+
+	<!-- 주문내역 삭제 레이어 -->
+	<div class="layerAlertCom" id="layerAlertCom">
+		<div class="layerBox">
+			<div class="layerCnt">
+				<div class="layerAlert">
+					<p>선택한 주문내역을<br />삭제하시겠습니까?<span class="txtSub1">삭제 후에는 복구할 수 없습니다.</span></p>
+					<div class="btnRight">
+						<a href="javascript:;" class="btnAlert2 layerAlertCom_close">취소</a>
+						<a href="#" class="btnAlert1">확인</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--// 주문내역 삭제 레이어 -->
+
+	<script type="text/javascript">
+		//주문상세 레이어
+		commonPop('#layerAlertCom');
+
+		//기타버튼 레이어 show,hide
+		$('.btnEtc').on('click', function(e) {
+			e.preventDefault();
+			var _this = $(this);
+			if ( _this.hasClass('on') ) {
+				_this.removeClass('on').next().slideUp();
+			} else {
+				_this.addClass('on').next().slideDown();
+			}
+		});
+
+		//탭바
+		$('.tabBar ul li a').on('click', function (e) {
+			e.preventDefault();
+			var _li = $(this).parent();
+			_li.addClass('active').siblings().removeClass('active');
+		});
+	</script>
+</body>
+</html>
